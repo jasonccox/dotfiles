@@ -1,0 +1,88 @@
+set nocompatible            " don't worry about being compatible with Vi
+
+" COLORS
+
+colorscheme codedark        " based on VS Code
+syntax enable               " enable syntax highlighting
+set cursorline              " highlight current line
+
+" SPACES & TABS
+
+set tabstop=4               " number of visual spaces per tab
+set softtabstop=4           " number of spaces inserted when tab key is pressed
+set shiftwidth=4            " number of columns to indent
+set expandtab               " insert spaces when tab key is pressed
+set autoindent              " turn on autoindent
+set smartindent             " be smarter about autoindenting
+
+" LINES
+
+set number                  " show line numbers
+set cpoptions+=n            " let the text of wrapped lines use the gutter
+set scrolloff=5             " always show at least 5 lines below the cursor
+
+" SEARCH
+
+set incsearch               " search as characters are typed
+set hlsearch                " highlight matches
+set path+=**                " recursively search sub-folbers when searching for files  
+
+" FOLDING
+
+set foldenable              " enable folding
+set foldlevelstart=10       " auto-fold things starting at 10 levels deep
+set foldmethod=indent       " fold based on indent level
+
+" STATUS LINE
+
+set laststatus=2            " always display the status line
+set statusline=%f\          " filename
+set statusline+=%h%w%r%m    " flags
+set statusline+=%y          " filetype 
+set statusline+=%=          " switch to right side of screen
+set statusline+=%c,\        " cursor column
+set statusline+=%l\ /\ %L\  " cursor line / total lines
+set statusline+=\ \         " some space
+set statusline+=%P          " percent through file
+
+set showcmd                 " show commands as they're being typed
+
+" TAB COMPLETION
+
+set wildmenu                " show possible matches
+
+" BACKSPACE
+
+set backspace=indent        " allow backspacing over autoindent
+set backspace+=eol          " allow backspacing over line breaks
+set backspace+=start        " allow backspacing over the start of insert
+
+" MISC
+
+filetype plugin indent on   " load specific plugins and indent files based on filetype
+packadd! matchit            " enable improved % matching
+
+" restore cursor position when opening file
+autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+    \ |   exe "normal! g`\""
+    \ | endif
+
+" KEY MAPPINGS
+
+" auto match braces
+inoremap {<CR> {<CR>}<Esc>ko
+
+" temporary mappings to teach me not to navigate with the arrow keys
+inoremap <Up> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Down> <Nop>
+nnoremap <Up> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Down> <Nop>
+
+" VIM-GO
+
+let g:go_fmt_command = "goimports"

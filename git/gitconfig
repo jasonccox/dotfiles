@@ -1,0 +1,5 @@
+[user]
+	name = Jason Cox
+	email = dev@jasoncarloscox.com
+[core]
+	editor = vim
