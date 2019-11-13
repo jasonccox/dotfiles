@@ -3,7 +3,7 @@
 # Link real configs to the ones in dotfiles
 
 link() {
-    ln -s "$(pwd)/$1" $2
+    ln -s "$(pwd)/$1" "$2"
 }
 
 # Shell
@@ -19,3 +19,9 @@ link vim ~/.vim
 # Git
 rm -f ~/.gitconfig
 link git/gitconfig ~/.gitconfig
+
+# VS Code
+mkdir -p "$HOME/.config/Code - OSS/User"
+rm -rf "$HOME/.config/Code - OSS/User/settings.json" "$HOME/.config/Code - OSS/User/keybindings.json"
+link settings.json "$HOME/.config/Code - OSS/User/settings.json"
+link keybindings.json "$HOME/.config/Code - OSS/User/keybindings.json"
