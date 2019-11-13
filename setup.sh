@@ -6,10 +6,11 @@ link() {
     ln -s "$(pwd)/$1" $2
 }
 
-# Bash
-rm -f ~/.bash_profile ~/.bashrc
-link bash/bash_profile ~/.bash_profile
-link bash/bashrc ~/.bashrc
+# Shell
+rm -f ~/.profile ~/.bash_profile ~/.bashrc
+link shell/profile ~/.profile
+link shell/bash_profile ~/.bash_profile
+link shell/bashrc ~/.bashrc
 
 # Vim
 rm -rf ~/.vim
