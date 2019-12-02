@@ -25,3 +25,7 @@ mkdir -p "$HOME/.config/Code - OSS/User"
 rm -rf "$HOME/.config/Code - OSS/User/settings.json" "$HOME/.config/Code - OSS/User/keybindings.json"
 link vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
 link vscode/keybindings.json "$HOME/.config/Code - OSS/User/keybindings.json"
+
+# Tmux
+rm -f ~/.tmux.conf
+link tmux/tmux.conf ~/.tmux.conf
