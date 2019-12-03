@@ -2,4 +2,8 @@
 # ~/.bash_profile
 #
 
+# source an extra file that isn't tracked by dotfiles repo for local-only configs
+[[ -f ~/.bash_profile_extra ]] && . ~/.bash_profile_extra
+
+# source .bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
