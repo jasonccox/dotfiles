@@ -2,6 +2,7 @@ set nocompatible            " don't worry about being compatible with Vi
 
 " COLORS
 
+set t_Co=256                " force 256 color support
 colorscheme codedark        " based on VS Code
 syntax enable               " enable syntax highlighting
 set cursorline              " highlight current line
