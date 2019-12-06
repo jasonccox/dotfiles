@@ -64,6 +64,12 @@ set backspace=indent        " allow backspacing over autoindent
 set backspace+=eol          " allow backspacing over line breaks
 set backspace+=start        " allow backspacing over the start of insert
 
+" NETRW
+
+let g:netrw_banner = 0      " don't show banner
+let g:netrw_liststyle = 3   " use tree-style list
+let g:netrw_winsize = 25    " when opening in a split, only use 25% of space
+
 " MISC
 
 filetype plugin indent on   " load specific plugins and indent files based on filetype
