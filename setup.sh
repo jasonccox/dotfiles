@@ -6,6 +6,10 @@ link() {
     ln -s "$(pwd)/$1" "$2"
 }
 
+# init git modules
+git submodule init
+git submodule update
+
 # Shell
 rm -f ~/.profile ~/.bash_profile ~/.bashrc
 link shell/profile ~/.profile
