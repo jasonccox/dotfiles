@@ -99,3 +99,6 @@ nnoremap <Down> <Nop>
 " VIM-GO
 
 let g:go_fmt_command = "goimports"
+
+source $HOME/.vim/config/coc.vim
+packadd coc.nvim
