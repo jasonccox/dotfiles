@@ -1,6 +1,8 @@
 set nocompatible            " don't worry about being compatible with Vi
 
+" =============================================================================
 " COLORS
+" =============================================================================
 
 " make background true black
 let g:jellybeans_overrides = {
@@ -13,7 +15,9 @@ colorscheme jellybeans      " my preferred colorscheme
 syntax enable               " enable syntax highlighting
 set cursorline              " highlight current line
 
+" =============================================================================
 " SPACES & TABS
+" =============================================================================
 
 set tabstop=4               " number of visual spaces per tab
 set softtabstop=4           " number of spaces inserted when tab key is pressed
@@ -22,25 +26,33 @@ set expandtab               " insert spaces when tab key is pressed
 set autoindent              " turn on autoindent
 set smartindent             " be smarter about autoindenting
 
+" =============================================================================
 " LINES
+" =============================================================================
 
 set number                  " show line numbers
 set cpoptions+=n            " let the text of wrapped lines use the gutter
 set scrolloff=5             " always show at least 5 lines below the cursor
 
+" =============================================================================
 " SEARCH
+" =============================================================================
 
 set incsearch               " search as characters are typed
 set hlsearch                " highlight matches
 set path+=**                " recursively search sub-folbers when searching for files  
 
+" =============================================================================
 " FOLDING
+" =============================================================================
 
 set foldenable              " enable folding
 set foldlevelstart=10       " auto-fold things starting at 10 levels deep
 set foldmethod=indent       " fold based on indent level
 
+" =============================================================================
 " STATUS LINE
+" =============================================================================
 
 set laststatus=2            " always display the status line
 set statusline=%f\          " filename
@@ -54,23 +66,31 @@ set statusline+=%P          " percent through file
 
 set showcmd                 " show commands as they're being typed
 
+" =============================================================================
 " TAB COMPLETION
+" =============================================================================
 
 set wildmenu                " show possible matches
 
+" =============================================================================
 " BACKSPACE
+" =============================================================================
 
 set backspace=indent        " allow backspacing over autoindent
 set backspace+=eol          " allow backspacing over line breaks
 set backspace+=start        " allow backspacing over the start of insert
 
+" =============================================================================
 " NETRW
+" =============================================================================
 
 let g:netrw_banner = 0      " don't show banner
 let g:netrw_liststyle = 3   " use tree-style list
 let g:netrw_winsize = 25    " when opening in a split, only use 25% of space
 
+" =============================================================================
 " MISC
+" =============================================================================
 
 filetype plugin indent on   " load specific plugins and indent files based on filetype
 packadd! matchit            " enable improved % matching
@@ -81,7 +101,9 @@ autocmd BufReadPost *
     \ |   exe "normal! g`\""
     \ | endif
 
+" =============================================================================
 " KEY MAPPINGS
+" =============================================================================
 
 " auto match braces
 inoremap {<CR> {<CR>}<Esc>ko
@@ -96,9 +118,9 @@ nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 nnoremap <Down> <Nop>
 
-" VIM-GO
+" =============================================================================
+" PACKAGES
+" =============================================================================
 
-let g:go_fmt_command = "goimports"
-
-source $HOME/.vim/config/coc.vim
-packadd coc.nvim
+source $HOME/.vim/config/coc.vim    " load coc config
+packadd coc.nvim                    " load coc package
