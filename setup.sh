@@ -19,7 +19,7 @@ link shell/bashrc ~/.bashrc
 # Vim
 rm -rf ~/.vim
 link vim ~/.vim
-vim +"CocInstall -sync coc-tsserver" +"silent! helptags ALL" +"q"
+vim +"CocInstall -sync coc-tsserver coc-html coc-css coc-yaml" +"silent! helptags ALL" +"q"
 
 # Git
 rm -f ~/.gitconfig

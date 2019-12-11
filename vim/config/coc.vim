@@ -6,6 +6,12 @@ set updatetime=300      " improve diagnostic message experience
 set hidden              " if not set, TextEdit might fail
 
 " =============================================================================
+" OTHER SETTINGS
+" =============================================================================
+
+set foldmethod=manual   " required for coc fold to work
+
+" =============================================================================
 " KEYMAPPINGS
 " =============================================================================
 
