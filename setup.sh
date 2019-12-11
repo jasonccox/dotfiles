@@ -19,6 +19,7 @@ link shell/bashrc ~/.bashrc
 # Vim
 rm -rf ~/.vim
 link vim ~/.vim
+vim +"CocInstall -sync coc-tsserver" +"q"
 
 # Git
 rm -f ~/.gitconfig
