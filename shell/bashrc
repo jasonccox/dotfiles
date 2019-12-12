@@ -6,15 +6,18 @@
 [[ $- != *i* ]] && return
 
 # start tmux by default
-if command -v tmux > /dev/null && [ -z "$TMUX" ]; then
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 
 # enable vi-style shell
 set -o vi
 
-# aliases
-alias ls='ls -h --color=auto'
-
 # set prompt 
 export PS1="[\[\e[32m\]\W\[\e[m\]]\\$ "
+
+# use vim
+export EDITOR=vim
+
+# aliases
+alias ls='ls -h --color=auto'
