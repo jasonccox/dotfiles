@@ -18,7 +18,7 @@ setup_vim() {
     echo Setting up vim...
     rm -rf ~/.vim
     link vim ~/.vim
-    vim +"CocInstall -sync coc-tsserver coc-html coc-css coc-yaml" +"silent! helptags ALL" +"q"
+    vim +"CocInstall -sync coc-tsserver coc-html coc-css coc-yaml coc-sh" +"silent! helptags ALL" +"q"
 }
 
 setup_git() {
