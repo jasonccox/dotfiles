@@ -10,6 +10,9 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 
+# use vi mode
+set -o vi
+
 # set prompt 
 export PS1="[\[\e[32m\]\W\[\e[m\]]\\$ "
 
