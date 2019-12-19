@@ -1,3 +1,10 @@
+" This file contains configuration related to the coc.nvim package.
+
+if exists("g:loaded_cocrc")
+    finish
+endif
+let g:loaded_cocrc = 1
+
 " =============================================================================
 " SUGGESTED SETTINGS FROM README
 " =============================================================================

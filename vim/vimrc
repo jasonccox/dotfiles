@@ -121,10 +121,3 @@ autocmd BufReadPost *
 if filereadable(expand("~/.vim/vimrc_extra"))
     source $HOME/.vim/vimrc_extra
 endif
-
-" =============================================================================
-" PACKAGES
-" =============================================================================
-
-source $HOME/.vim/config/coc.vim    " load coc config
-packadd coc.nvim                    " load coc package
