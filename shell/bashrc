@@ -16,6 +16,13 @@ set -o vi
 # set prompt 
 export PS1="[\[\e[32m\]\W\[\e[m\]]\\$ "
 
+# unlimited history
+export HISTSIZE=
+export HISTFILESIZE=
+
+# don't save duplicate history entries
+export HISTCONTROL=erasedups
+
 # use vim
 export EDITOR=vim
 
