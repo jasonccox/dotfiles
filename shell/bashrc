@@ -23,6 +23,9 @@ export HISTFILESIZE=
 # don't save duplicate history entries
 export HISTCONTROL=erasedups
 
+# append to history when writing it
+shopt -s histappend
+
 # use vim
 export EDITOR=vim
 
