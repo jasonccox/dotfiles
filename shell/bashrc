@@ -26,6 +26,9 @@ export HISTCONTROL=erasedups
 # append to history when writing it
 shopt -s histappend
 
+# warn if ther are jobs running/stopped when exiting
+shopt -s checkjobs
+
 # use vim
 export EDITOR=vim
 
