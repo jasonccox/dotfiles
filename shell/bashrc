@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# source bashmarks
+[[ -f ~/dotfiles/shell/bashmarks.sh ]] && . ~/dotfiles/shell/bashmarks.sh
+
 # start tmux by default
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
