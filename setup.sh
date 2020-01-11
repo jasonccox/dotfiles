@@ -18,6 +18,10 @@ setup_vim() {
     echo Setting up vim...
     rm -rf ~/.vim
     link vim ~/.vim
+    if command -v yay &> /dev/null; then
+        echo Installing C language server \(you may be prompted for your password\)...
+        yay -S --noconfirm ccls
+    fi
     vim +"CocInstall -sync coc-tsserver coc-html coc-css coc-yaml coc-sh" +"silent! helptags ALL" +"q"
 }
 
