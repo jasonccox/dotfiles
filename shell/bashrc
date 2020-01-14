@@ -30,7 +30,9 @@ export HISTCONTROL=erasedups
 shopt -s histappend
 
 # warn if ther are jobs running/stopped when exiting
-shopt -s checkjobs
+if shopt | grep -q '^checkjobs'; then
+    shopt -s checkjobs
+fi
 
 # use vim
 export EDITOR=vim
