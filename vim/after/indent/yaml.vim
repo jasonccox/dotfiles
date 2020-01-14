@@ -1,3 +1,5 @@
+let b:undo_indent = get(b:, 'undo_indent', '')
+
 setlocal expandtab
 setlocal tabstop=2
 setlocal softtabstop=2
