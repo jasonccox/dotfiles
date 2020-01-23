@@ -8,11 +8,10 @@ link() {
 
 setup_shell() {
     echo Setting up shell...
-    rm -f ~/.profile ~/.bash_profile ~/.bashrc ~/.sdirs
+    rm -f ~/.profile ~/.bash_profile ~/.bashrc
     link shell/profile ~/.profile
     link shell/bash_profile ~/.bash_profile
     link shell/bashrc ~/.bashrc
-    link shell/sdirs ~/.sdirs
 }
 
 setup_vim() {
