@@ -1,3 +1,6 @@
 [submodule "vim/pack/lang/start/coc.nvim"]
 	path = vim/pack/lang/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+[submodule "vim/pack/lang/start/julia-vim"]
+	path = vim/pack/lang/start/julia-vim
+	url = https://github.com/JuliaEditorSupport/julia-vim
