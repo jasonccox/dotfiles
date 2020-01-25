@@ -39,3 +39,8 @@ export EDITOR=vim
 
 # aliases
 alias ls='ls -h --color=auto'
+
+# add my scripts to path
+if [ -d "$HOME/code/scripts" ]; then
+    export PATH="$PATH":"$HOME/code/scripts"
+fi
