@@ -40,6 +40,11 @@ export EDITOR=vim
 # aliases
 alias ls='ls -h --color=auto'
 
+# add ~/.local/bin to path
+if [ -d "$HOME/.local/bin" ]; then
+    export PATH="$PATH":"$HOME/.local/bin"
+fi
+
 # add my scripts to path
 if [ -d "$HOME/code/scripts" ]; then
     export PATH="$PATH":"$HOME/code/scripts"
