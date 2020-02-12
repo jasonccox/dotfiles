@@ -16,6 +16,9 @@ syntax enable               " enable syntax highlighting
 set cursorline              " highlight current line
 set colorcolumn=+1          " highlight line textwidth + 1
 
+" set languages to be highlighted within markdown
+let g:markdown_fenced_languages = ['python']
+
 " =============================================================================
 " SPACES & TABS
 " =============================================================================
