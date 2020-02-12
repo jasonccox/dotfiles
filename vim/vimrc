@@ -14,6 +14,7 @@ let g:jellybeans_overrides = {
 colorscheme jellybeans      " my preferred colorscheme
 syntax enable               " enable syntax highlighting
 set cursorline              " highlight current line
+set colorcolumn=+1          " highlight line textwidth + 1
 
 " =============================================================================
 " SPACES & TABS
@@ -35,6 +36,7 @@ set cpoptions+=n            " let the text of wrapped lines use the gutter
 set scrolloff=5             " always show at least 5 lines below the cursor
 set wrap                    " wrap long lines
 set linebreak               " wrap lines at whitespace, not in the middle of words
+set textwidth=80            " lines should be 80 chars or less
 
 " =============================================================================
 " SEARCH
