@@ -45,6 +45,27 @@ setup_tmux() {
     link tmux/tmux.conf ~/.tmux.conf
 }
 
+setup_pim() {
+    echo Setting up PIM...
+
+    echo Enter sudo password to install needed packages:
+    sudo pacman --noconfirm -S khal todoman vdirsyncer python-keyring python-dbus kwallet
+          
+    rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/config
+    mkdir -p ~/.config/khal ~/.config/todoman ~/.config/vdirsyncer
+    link pim/khal.conf ~/.config/khal/config
+    link pim/todoman.conf ~/.config/todoman/todoman.conf
+    link pim/vdirsyncer.conf ~/.config/vdirsyncer/config
+
+    echo Enter password for user jason for cloud.jasoncarloscox.com:
+    keyring set cloud.jasoncarloscox.com jason
+    
+    mkdir -p ~/cal
+
+    vdirsyncer discover
+    vdirsyncer sync
+}
+
 # check for help arg
 if [ "$1" = help ]; then
     echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [vscode]"
@@ -77,6 +98,9 @@ if [ "$1" ]; then
             tmux )      setup_tmux
                         shift
                         ;;
+            pim )       setup_pim
+                        shift
+                        ;;
         esac
     done
 else
@@ -86,4 +110,5 @@ else
     setup_git
     setup_vscode
     setup_tmux
+    setup_pim
 fi
