@@ -64,6 +64,7 @@ setup_pim() {
 
     vdirsyncer discover
     vdirsyncer sync
+    vdirsyncer metasync
 }
 
 # check for help arg
