@@ -51,7 +51,7 @@ setup_pim() {
     echo Enter sudo password to install needed packages:
     sudo pacman --noconfirm -S khal todoman vdirsyncer python-keyring python-dbus kwallet
           
-    rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/{config, vdir_autosync}
+    rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/config
     mkdir -p ~/.config/khal ~/.config/todoman ~/.config/vdirsyncer
     link pim/khal.conf ~/.config/khal/config
     link pim/todoman.conf ~/.config/todoman/todoman.conf
@@ -66,6 +66,7 @@ setup_pim() {
     vdirsyncer sync
     vdirsyncer metasync
 
+    rm -f ~/.config/autostart-scripts/vdir_autosync
     mkdir -p ~/.config/autostart-scripts/
     link pim/vdir_autosync ~/.config/autostart-scripts/vdir_autosync
 }
