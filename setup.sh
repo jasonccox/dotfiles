@@ -65,6 +65,9 @@ setup_pim() {
     vdirsyncer discover
     vdirsyncer sync
     vdirsyncer metasync
+
+    mkdir -p ~/.config/autostart-scripts/
+    link pim/vdir_autosync ~/.config/autostart-scripts/vdir_autosync
 }
 
 # check for help arg
