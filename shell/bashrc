@@ -57,5 +57,5 @@ fi
 
 # set ssh-agent env variables
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
 fi
