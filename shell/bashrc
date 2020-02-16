@@ -5,57 +5,70 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# source bashmarks
-[[ -f ~/dotfiles/shell/bashmarks.sh ]] && . ~/dotfiles/shell/bashmarks.sh
-
 # start tmux by default
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 
-# use vi mode
-set -o vi
+################################################################################
+# PATH
+################################################################################
 
-# set prompt 
-export PS1="[\[\e[32m\]\W\[\e[m\]]\\$ "
-
-# unlimited history
-export HISTSIZE=
-export HISTFILESIZE=
-
-# don't save duplicate history entries
-export HISTCONTROL=erasedups
-
-# append to history when writing it
-shopt -s histappend
-
-# warn if ther are jobs running/stopped when exiting
-if shopt | grep -q '^checkjobs'; then
-    shopt -s checkjobs
-fi
-
-# use vim
-export EDITOR=vim
-
-# aliases
-alias ls='ls -h --color=auto'
-
-# add ~/.local/bin to path
+# add ~/.local/bin
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH":"$HOME/.local/bin"
 fi
 
-# add my scripts to path
+# add my scripts
 if [ -d "$HOME/code/scripts" ]; then
     export PATH="$PATH":"$HOME/code/scripts"
 fi
 
-# start ssh-agent if it isn't already running
+
+################################################################################
+# BASH SETTINGS
+################################################################################
+
+export PS1="[\[\e[32m\]\W\[\e[m\]]\\$ " # set prompt to "[<current directory>]$"
+set -o vi                               # use vi mode
+export HISTSIZE=                        # unlimited history
+export HISTFILESIZE=                    # unlimited history file
+export HISTCONTROL=erasedups            # don't save duplicate history entries
+
+if shopt | grep -q '^histappend'; then
+    shopt -s histappend                 # append to history when writing it
+fi
+
+if shopt | grep -q '^checkjobs'; then
+    shopt -s checkjobs                  # warn if jobs running/stopped on exit
+fi
+
+################################################################################
+# ALIASES
+################################################################################
+
+alias ls='ls -h --color=auto'
+
+################################################################################
+# SSH-AGENT
+################################################################################
+
+# start if it isn't already running
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent -t 15m > "$XDG_RUNTIME_DIR/ssh-agent.env"
 fi
 
-# set ssh-agent env variables
+# set env variables
 if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
 fi
+
+################################################################################
+# MISC
+################################################################################
+
+export EDITOR=vim   # use vim as preferred editor
+
+# source bashmarks
+[[ -f ~/dotfiles/shell/bashmarks.sh ]] && . ~/dotfiles/shell/bashmarks.sh
+
