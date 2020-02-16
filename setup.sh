@@ -47,10 +47,6 @@ setup_tmux() {
 
 setup_pim() {
     echo Setting up PIM...
-
-    echo Enter sudo password to install needed packages:
-    sudo pacman --noconfirm -S khal todoman vdirsyncer python-keyring python-dbus kwallet
-          
     rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/config
     mkdir -p ~/.config/khal ~/.config/todoman ~/.config/vdirsyncer
     link pim/khal.conf ~/.config/khal/config
