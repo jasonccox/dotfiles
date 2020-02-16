@@ -49,3 +49,13 @@ fi
 if [ -d "$HOME/code/scripts" ]; then
     export PATH="$PATH":"$HOME/code/scripts"
 fi
+
+# start ssh-agent if it isn't already running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    ssh-agent -t 15m > "$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+
+# set ssh-agent env variables
+if [[ ! "$SSH_AUTH_SOCK" ]]; then
+    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
+fi
