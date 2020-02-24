@@ -29,12 +29,15 @@ set shiftwidth=4            " number of columns to indent
 set expandtab               " insert spaces when tab key is pressed
 set autoindent              " turn on autoindent
 set smartindent             " be smarter about autoindenting
+set list                    " show invisible characters, as described below
+set listchars=tab:→\ ,trail:⋅,precedes:«,extends:»
 
 " =============================================================================
 " LINES
 " =============================================================================
 
 set number                  " show line numbers
+set relativenumber          " show line numbers relative to current line
 set cpoptions+=n            " let the text of wrapped lines use the gutter
 set scrolloff=5             " always show at least 5 lines below the cursor
 set wrap                    " wrap long lines
