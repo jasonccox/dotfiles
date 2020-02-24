@@ -55,7 +55,7 @@ setup_pim() {
 
     echo Enter password for user jason for cloud.jasoncarloscox.com:
     keyring set cloud.jasoncarloscox.com jason
-    
+
     mkdir -p ~/cal
 
     vdirsyncer discover
