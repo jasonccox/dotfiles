@@ -47,10 +47,6 @@ setup_tmux() {
 
 setup_pim() {
     echo Setting up PIM...
-
-    echo Enter sudo password to install needed packages:
-    sudo pacman --noconfirm -S khal todoman vdirsyncer python-keyring python-dbus kwallet
-          
     rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/config
     mkdir -p ~/.config/khal ~/.config/todoman ~/.config/vdirsyncer
     link pim/khal.conf ~/.config/khal/config
@@ -71,9 +67,16 @@ setup_pim() {
     link pim/vdir_autosync ~/.config/autostart-scripts/vdir_autosync
 }
 
+setup_ssh() {
+    echo Setting up SSH...
+    mkdir -p ~/.ssh
+    rm -f ~/.ssh/config
+    link ssh/config ~/.ssh/config
+}
+
 # check for help arg
 if [ "$1" = help ]; then
-    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [vscode]"
+    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [vscode] [pim] [ssh]"
     echo "If no arguments are provided, everything will be setup."
     exit 0
 fi
@@ -106,6 +109,9 @@ if [ "$1" ]; then
             pim )       setup_pim
                         shift
                         ;;
+            ssh )       setup_ssh
+                        shift
+                        ;;
         esac
     done
 else
@@ -116,4 +122,5 @@ else
     setup_vscode
     setup_tmux
     setup_pim
+    setup_ssh
 fi

@@ -1,0 +1,2 @@
+# add key to ssh-agent when password first entered
+AddKeysToAgent yes
