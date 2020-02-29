@@ -69,6 +69,10 @@ fi
 
 export EDITOR=vim   # use vim as preferred editor
 
+# enable tab completion for common commands
+[[ -f /usr/share/bash-completion/bash-completion ]] && \
+    . /usr/share/bash-completion/bash-completion
+
 # source bashmarks
 [[ -f ~/dotfiles/shell/bashmarks.sh ]] && . ~/dotfiles/shell/bashmarks.sh
 
