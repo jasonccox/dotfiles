@@ -132,6 +132,9 @@ nnoremap <Leader>ot <Esc>:tabnew **/*
 nnoremap <Leader>ov <Esc>:vsplit **/*
 nnoremap <Leader>os <Esc>:split **/*
 
+" easy access to ripgrep
+nnoremap <Leader>s <Esc>:Rg 
+
 " =============================================================================
 " MISC
 " =============================================================================

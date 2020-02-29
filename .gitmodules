@@ -5,5 +5,8 @@
 	path = vim/pack/lang/start/julia-vim
 	url = https://github.com/JuliaEditorSupport/julia-vim
 [submodule "vim/pack/tpope/start/vim-commentary"]
-	path = vim/pack/tpope/start/vim-commentary
+	path = vim/pack/util/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/pack/util/start/vim-ripgrep"]
+	path = vim/pack/util/start/vim-ripgrep
+	url = https://github.com/jremmen/vim-ripgrep.git
