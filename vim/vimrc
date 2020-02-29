@@ -84,6 +84,13 @@ set showcmd                 " show commands as they're being typed
 
 set wildmenu                " show possible matches
 
+" ignore files I probably don't want to open in vim
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png
+set wildignore+=*.pdf,*.doc,*.docx,*.xls,*.xlsx,*.odt,*.ods,*.odg
+set wildignore+=node_modules/*,bower_components/*
+set wildignore+=*.min.css,*.min.js
+set wildignore+=*.o,*.obj
+
 " =============================================================================
 " BACKSPACE
 " =============================================================================
@@ -104,6 +111,8 @@ let g:netrw_winsize = 25    " when opening in a split, only use 25% of space
 " KEY MAPPINGS
 " =============================================================================
 
+let mapleader = " "         " set leader to space
+
 " auto match braces
 inoremap {<CR> {<CR>}<Esc>ko
 
@@ -116,6 +125,12 @@ nnoremap <Up> <Nop>
 nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 nnoremap <Down> <Nop>
+
+" easy access to vim's built-in fuzzy file seach abilities
+nnoremap <Leader>oe <Esc>:edit **/*
+nnoremap <Leader>ot <Esc>:tabnew **/*
+nnoremap <Leader>ov <Esc>:vsplit **/*
+nnoremap <Leader>os <Esc>:split **/*
 
 " =============================================================================
 " MISC
