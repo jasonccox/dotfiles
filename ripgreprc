@@ -1,0 +1,6 @@
+# show only a preview of really long lines
+--max-columns=150
+--max-columns-preview
+
+# case insensitive if all lower case, otherwise case sensitive
+--smart-case
