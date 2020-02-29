@@ -80,29 +80,29 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " use :OI for organize import of current buffer
 command! -nargs=0 OI   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" <space>a to show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" <leader>ac to show all diagnostics
+nnoremap <silent> <leader>ca  :<C-u>CocList diagnostics<cr>
 
-" <space>e to manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" <leader>ce to manage extensions
+nnoremap <silent> <leader>ce  :<C-u>CocList extensions<cr>
 
-" <space>c to show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" <leader>cc to show commands
+nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
 
-" <space>o to find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" <leader>co to find symbol of current document
+nnoremap <silent> <leader>co  :<C-u>CocList outline<cr>
 
-" <space>s to search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" <leader>cs to search workleader symbols
+nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 
-" <space>j to do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" <leader>cj to do default action for next item.
+nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>
 
-" <space>k to do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" <leader>ck to do default action for previous item.
+nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 
-" <space>p to resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" <leader>cp to resume latest coc list
+nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
 
 augroup coc
   autocmd!
