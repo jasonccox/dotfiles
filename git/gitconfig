@@ -1,5 +1,13 @@
 [user]
-	name = Jason Cox
-	email = dev@jasoncarloscox.com
+    name = Jason Cox
+    email = dev@jasoncarloscox.com
 [core]
-	editor = vim
+    editor = vim
+[alias]
+    co = checkout
+    st = status
+    br = branch
+    cm = commit
+    a = add -p
+    l = log --graph --decorate
+    sm = submodule
