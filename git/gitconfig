@@ -11,3 +11,5 @@
     a = add -p
     l = log --graph --decorate
     sm = submodule
+    ps = push
+    pl = pull
