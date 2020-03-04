@@ -112,9 +112,6 @@ let g:netrw_winsize = 25    " when opening in a split, only use 25% of space
 
 let mapleader = " "         " set leader to space
 
-" auto match braces
-inoremap {<CR> {<CR>}<Esc>ko
-
 " temporary mappings to teach me not to navigate with the arrow keys
 inoremap <Up> <Nop>
 inoremap <Left> <Nop>
