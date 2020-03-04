@@ -132,10 +132,10 @@ nnoremap <Leader>ov :vsplit **/*
 nnoremap <Leader>os :split **/*
 
 " easy buffer management - shows list of buffers and then prepares buffer cmd
-nnoremap <Leader>b :buffers<CR>:buffer<Space>
+nnoremap <Leader>b :buffers<CR>:b<Space>
 
 " easy access to ripgrep
-nnoremap <Leader>s <Esc>:Rg 
+nnoremap <Leader>s <Esc>:Rg<Space>
 
 " =============================================================================
 " MISC
