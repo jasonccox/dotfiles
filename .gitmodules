@@ -10,3 +10,6 @@
 [submodule "vim/pack/util/start/vim-ripgrep"]
 	path = vim/pack/util/start/vim-ripgrep
 	url = https://github.com/jremmen/vim-ripgrep.git
+[submodule "vim/pack/lang/start/vim-javascript"]
+	path = vim/pack/lang/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
