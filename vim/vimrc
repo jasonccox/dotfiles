@@ -37,7 +37,6 @@ set listchars=tab:→\ ,trail:⋅,precedes:«,extends:»
 " =============================================================================
 
 set number                  " show line numbers
-set relativenumber          " show line numbers relative to current line
 set cpoptions+=n            " let the text of wrapped lines use the gutter
 set scrolloff=5             " always show at least 5 lines below the cursor
 set wrap                    " wrap long lines
