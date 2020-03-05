@@ -4,3 +4,10 @@
 
 # case insensitive if all lower case, otherwise case sensitive
 --smart-case
+
+# ignore certain files
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!bower_components/*
+--glob=!*.min.css
+--glob=!*.min.js

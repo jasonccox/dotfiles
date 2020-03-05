@@ -122,11 +122,8 @@ nnoremap <Left> <Nop>
 nnoremap <Right> <Nop>
 nnoremap <Down> <Nop>
 
-" easy access to vim's built-in fuzzy file seach abilities
-nnoremap <Leader>oe :edit **/*
-nnoremap <Leader>ot :tabnew **/*
-nnoremap <Leader>ov :vsplit **/*
-nnoremap <Leader>os :split **/*
+" easy access to fzf
+nnoremap <Leader>o :FZF<CR>
 
 " easy buffer management - shows list of buffers and then prepares buffer cmd
 nnoremap <Leader>b :buffers<CR>:b<Space>
