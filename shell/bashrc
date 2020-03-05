@@ -64,6 +64,20 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
 fi
 
 ################################################################################
+# FZF
+################################################################################
+
+# source keybindings and completion scripts
+[[ -f /usr/share/fzf/key-bindings.bash ]] && . /usr/share/fzf/key-bindings.bash
+[[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
+
+# use ripgrep by default
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
+
+# use ctrl-f as alternate to normal fzf ctrl-t since I use ctrl-t for tmux
+bind -x '"\C-f": fzf-file-widget'
+
+################################################################################
 # MISC
 ################################################################################
 
@@ -77,11 +91,6 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
 # suggest packages including a command that wasn't found
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
     . /usr/share/doc/pkgfile/command-not-found.bash
-
-# fzf integration
-[[ -f /usr/share/fzf/key-bindings.bash ]] && . /usr/share/fzf/key-bindings.bash
-[[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
 
 # source bashmarks
 [[ -f ~/dotfiles/shell/bashmarks.sh ]] && . ~/dotfiles/shell/bashmarks.sh
