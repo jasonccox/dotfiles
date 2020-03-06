@@ -146,3 +146,8 @@ autocmd BufReadPost *
     \ | endif
 
 set hidden                  " allow switching buffers without saving
+
+" fzf integration on macOS - must go in vimrc
+if isdirectory("/usr/local/opt/fzf")
+    set rtp+=/usr/local/opt/fzf
+endif
