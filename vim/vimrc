@@ -49,7 +49,8 @@ set textwidth=0             " don't auto-break lines at any width
 
 set incsearch               " search as characters are typed
 set hlsearch                " highlight matches
-set path+=**                " recursively search sub-folbers when searching for files  
+set path+=**                " recursively search sub-folbers when searching for files
+set smartcase               " only make searches case-sensitive if using caps
 
 " =============================================================================
 " FOLDING
@@ -143,3 +144,5 @@ autocmd BufReadPost *
     \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
     \ |   exe "normal! g`\""
     \ | endif
+
+set hidden                  " allow switching buffers without saving
