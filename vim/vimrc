@@ -151,3 +151,5 @@ set hidden                  " allow switching buffers without saving
 if isdirectory("/usr/local/opt/fzf")
     set rtp+=/usr/local/opt/fzf
 endif
+
+let g:AutoPairsCenterLine=0 " don't move to center when pressing <CR> after {
