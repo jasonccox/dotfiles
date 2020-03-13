@@ -50,7 +50,8 @@ set textwidth=0             " don't auto-break lines at any width
 set incsearch               " search as characters are typed
 set hlsearch                " highlight matches
 set path+=**                " recursively search sub-folbers when searching for files
-set smartcase               " only make searches case-sensitive if using caps
+set ignorecase              " make searches case-insensitive
+set smartcase               " make searches case-sensitive if capitals used
 
 " =============================================================================
 " FOLDING
