@@ -1,4 +1,4 @@
-# auto-nvm.bash
+# cdnvm.bash
 # Switch to correct node version when changing directories. Comes from
 # https://dev.to/d4nyll/automatic-nvm-use-34ol with minor modifications.
 
