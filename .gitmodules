@@ -25,3 +25,6 @@
 [submodule "vim/pack/lang/start/vim-jsx-typescript"]
 	path = vim/pack/lang/start/vim-jsx-typescript
 	url = https://github.com/peitalin/vim-jsx-typescript.git
+[submodule "vim/pack/lang/start/vim-elm-syntax"]
+	path = vim/pack/lang/start/vim-elm-syntax
+	url = https://github.com/andys8/vim-elm-syntax.git
