@@ -59,7 +59,7 @@ set smartcase               " make searches case-sensitive if capitals used
 
 set foldenable              " enable folding
 set foldlevelstart=10       " auto-fold things starting at 10 levels deep
-set foldmethod=syntax       " fold based on syntax
+set foldmethod=manual       " disable automatic fold generation - it's slow
 let g:markdown_folding=1    " make folding work for markdown - must be set before
                             " built-in markdown ftplugin file is loaded
 
