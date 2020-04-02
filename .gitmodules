@@ -28,3 +28,6 @@
 [submodule "vim/pack/lang/start/vim-elm-syntax"]
 	path = vim/pack/lang/start/vim-elm-syntax
 	url = https://github.com/andys8/vim-elm-syntax.git
+[submodule "vim/pack/lang/start/haskell-vim"]
+	path = vim/pack/lang/start/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim.git
