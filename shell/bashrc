@@ -24,16 +24,15 @@ if [ -d "$HOME/code/scripts" ]; then
     export PATH="$PATH":"$HOME/code/scripts"
 fi
 
-
 ################################################################################
 # BASH SETTINGS
 ################################################################################
 
-export PS1="[\[\e[32m\]\W\[\e[m\]]\\$ " # set prompt to "[<current directory>]$"
-set -o vi                               # use vi mode
-export HISTSIZE=                        # unlimited history
-export HISTFILESIZE=                    # unlimited history file
-export HISTCONTROL=erasedups            # don't save duplicate history entries
+PS1="[\[\e[32m\]\W\[\e[m\]]\\$ "    # set prompt to "[<current directory>]$ "
+set -o vi                           # use vi mode
+export HISTSIZE=                    # unlimited history
+export HISTFILESIZE=                # unlimited history file
+export HISTCONTROL=erasedups        # don't save duplicate history entries
 
 if shopt | grep -q '^histappend'; then
     shopt -s histappend                 # append to history when writing it
