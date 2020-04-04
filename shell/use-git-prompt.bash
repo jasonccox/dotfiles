@@ -5,15 +5,16 @@
 # already with git completion, but I include it here to be safe.
 [[ -f ~/dotfiles/shell/git-prompt.sh ]] && . ~/dotfiles/shell/git-prompt.sh
 
-PROMPT_PRE_GIT="[\[\e[32m\]\W\[\e[m\]"
+PROMPT_PRE_GIT="[\[\e[94m\]\W\[\e[0m\]"
 PROMPT_POST_GIT="]\\$ "
 
-if command -v __git_ps1; then
+if command -v __git_ps1 &> /dev/null; then
     GIT_PS1_SHOWDIRTYSTATE="yes"
     GIT_PS1_SHOWSTASHSTATE="yes"
     GIT_PS1_SHOWUNTRACKEDFILES="yes"
     GIT_PS1_SHOWCOLORHINTS="yes"
-    PROMPT_COMMAND="__git_ps1 \"$PROMPT_PRE_GIT\" \"$PROMPT_POST_GIT\""
+    GIT_PS1_STATESEPARATOR=""
+    PROMPT_COMMAND="__git_ps1 \"$PROMPT_PRE_GIT\" \"$PROMPT_POST_GIT\" \":%s\"" 
 else
     PS1="$PROMPT_PRE_GIT$PROMPT_POST_GIT"
 fi
