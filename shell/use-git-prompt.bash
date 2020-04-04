@@ -12,6 +12,7 @@ if command -v __git_ps1 &> /dev/null; then
     GIT_PS1_SHOWDIRTYSTATE="yes"
     GIT_PS1_SHOWSTASHSTATE="yes"
     GIT_PS1_SHOWUNTRACKEDFILES="yes"
+    GIT_PS1_SHOWUPSTREAM="yes"
     GIT_PS1_SHOWCOLORHINTS="yes"
     GIT_PS1_STATESEPARATOR=""
     PROMPT_COMMAND="__git_ps1 \"$PROMPT_PRE_GIT\" \"$PROMPT_POST_GIT\" \":%s\"" 
