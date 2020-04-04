@@ -2,7 +2,7 @@
 # Source this file in .bashrc to use a prompt that shows the git status info.
 
 # load script providing __git_ps1 function used in prompt - it may be provided
-# already with git completion, but I include it here to be safe.
+# already with git completion, but I include my own tweaked version.
 [[ -f ~/dotfiles/shell/git-prompt.sh ]] && . ~/dotfiles/shell/git-prompt.sh
 
 PROMPT_PRE_GIT="[\[\e[94m\]\W\[\e[0m\]"
