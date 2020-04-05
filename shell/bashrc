@@ -33,7 +33,7 @@ if [ -f "$HOME/dotfiles/shell/use-git-prompt.bash" ]; then
     . "$HOME/dotfiles/shell/use-git-prompt.bash"
 else
     # set prompt to "[<current directory>]$ "
-    PS1="[\[\e[32m\]\W\[\e[m\]]\\$ "
+    PS1="[\[\e[36m\]\W\[\e[m\]]\\$ "
 fi
 
 set -o vi                           # use vi mode

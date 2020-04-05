@@ -5,7 +5,7 @@
 # already with git completion, but I include my own tweaked version.
 [[ -f ~/dotfiles/shell/git-prompt.sh ]] && . ~/dotfiles/shell/git-prompt.sh
 
-PROMPT_PRE_GIT="[\[\e[94m\]\W\[\e[0m\]"
+PROMPT_PRE_GIT="[\[\e[36m\]\W\[\e[0m\]"
 PROMPT_POST_GIT="]\\$ "
 
 if command -v __git_ps1 &> /dev/null; then
