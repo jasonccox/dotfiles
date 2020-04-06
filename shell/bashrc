@@ -16,13 +16,15 @@ fi
 
 # add ~/.local/bin
 if [ -d "$HOME/.local/bin" ]; then
-    export PATH="$PATH":"$HOME/.local/bin"
+    PATH="$PATH:$HOME/.local/bin"
 fi
 
 # add my scripts
 if [ -d "$HOME/code/scripts" ]; then
-    export PATH="$PATH":"$HOME/code/scripts"
+    PATH="$PATH:$HOME/code/scripts"
 fi
+
+export PATH
 
 ################################################################################
 # BASH SETTINGS
@@ -102,4 +104,7 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
 
 # source bashmarks
 [[ -f ~/dotfiles/shell/bashmarks.sh ]] && . ~/dotfiles/shell/bashmarks.sh
+
+# source an extra file that isn't tracked by dotfiles repo for local-only configs
+[[ -f ~/.bash_extra ]] && . ~/.bash_extra
 

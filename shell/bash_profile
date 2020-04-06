@@ -5,5 +5,3 @@
 # source .bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# source an extra file that isn't tracked by dotfiles repo for local-only configs
-[[ -f ~/.bash_extra ]] && . ~/.bash_extra
