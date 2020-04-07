@@ -137,6 +137,8 @@ nnoremap <Leader>s <Esc>:Rg<Space>
 " MISC
 " =============================================================================
 
+set belloff=esc,insertmode  " no bell when pressing esc
+
 filetype plugin indent on   " load specific plugins and indent files based on filetype
 packadd! matchit            " enable improved % matching
 
