@@ -13,7 +13,7 @@ find-up () {
 
 # run cd with arguments and switch node version (using nvm) as applicable
 cdnvm(){
-    cd $@;
+    builtin cd $@;
     nvm_path=$(find-up .nvmrc | tr -d '[:space:]')
 
     # If there are no .nvmrc file, use the default nvm version
