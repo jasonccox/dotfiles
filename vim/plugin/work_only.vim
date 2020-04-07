@@ -1,6 +1,5 @@
 " skip this file if not running on work laptop
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname != 'C02Z5395LVDR'
+if hostname() != 'C02Z5395LVDR'
     finish
 endif
 
