@@ -11,3 +11,4 @@
 --glob=!bower_components/*
 --glob=!*.min.css
 --glob=!*.min.js
+--glob=!*.swp
