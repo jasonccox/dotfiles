@@ -1,11 +1,20 @@
 # cdnvm.bash
 # Switch to correct node version when changing directories. Comes from
-# https://dev.to/d4nyll/automatic-nvm-use-34ol with minor modifications.
+# https://dev.to/d4nyll/automatic-nvm-use-34ol with minor modifications detailed
+# below.
+
+# CHANGES
+#
+# - echo "Changing node version..." before switching so user knows why cd is
+#   being slow
+# - use builtin cd to prevent issues if cd is already aliased to cdnvm when this
+#   is sourced
+# - make cdnvm noticeably faster by making find-up() stop at home directory
 
 # search for a file in current directory and its ancestors
 find-up () {
     path=$(pwd)
-    while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+    while [[ "$path" != "" && "$path" != "$HOME" && ! -e "$path/$1" ]]; do
         path=${path%/*}
     done
     echo "$path"
