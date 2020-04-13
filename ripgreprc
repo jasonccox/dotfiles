@@ -12,3 +12,4 @@
 --glob=!*.min.css
 --glob=!*.min.js
 --glob=!*.swp
+--glob=!.ccls-cache/*
