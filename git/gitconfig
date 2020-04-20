@@ -1,15 +1,18 @@
+# This is Git's per-user configuration file.
 [user]
-    name = Jason Cox
-    email = dev@jasoncarloscox.com
+	name = Jason Cox
+	email = dev@jasoncarloscox.com
 [core]
-    editor = vim
+	editor = vim
+	ignorecase = false
+	excludesfile = ~/dotfiles/git/gitignore
 [alias]
-    co = checkout
-    st = status
-    br = branch
-    cm = commit
-    a = add -p
-    l = log --graph --decorate
-    sm = submodule
-    ps = push
-    pl = pull
+	co = checkout
+	st = status
+	br = branch
+	cm = commit
+	a = add -p
+	l = log --graph --decorate
+	sm = submodule
+	ps = push
+	pl = pull
