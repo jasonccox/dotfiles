@@ -52,7 +52,7 @@ setup_tmux() {
     esac
 
     echo Installing tmux-mem and tmux-cpu \(you may be prompted for your password\)...
-    sudo /usr/local/bin/npm i -g tmux-mem tmux-cpu
+    (command -v nvm && nvm deactivate; sudo npm i -g tmux-mem tmux-cpu)
 }
 
 setup_pim() {
