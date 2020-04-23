@@ -26,22 +26,35 @@ export PATH
 ################################################################################
 
 __prompt() {
-    local EXIT="$?"
-    PS1=""
-    if [ "$EXIT" != 0 ]; then
-        PS1="\[\e[31;1m\]exit $EXIT\[\e[m\]\n" # "exit <exit status>"
+    local EXIT_CODE="$?"
+    local DEFAULT='\[\e[m\]'
+    local RED='\[\e[31;1m\]'
+    local CYAN='\[\e[36m\]'
+    local DARK_GREY='\[\e[90m\]'
+
+    # set exit msg if exit code non-zero and new command was entered (i.e. user
+    # didn't just press <Enter>)
+    __2nd_last_cmd="$__last_cmd"
+    __last_cmd="$(history 1)"
+    if [ "$EXIT_CODE" != 0 ] && [ "$__last_cmd" != "$__2nd_last_cmd" ]; then
+        local EXIT_MSG="exit $EXIT_CODE\n"
     fi
-    PS1="$PS1[\[\e[36m\]\w\[\e[m\]]\\$ " # "[<current directory>]$ "
+
+    # set PS1:
+    # <exit msg>
+    # [<timestamp> <current directory>]$
+    PS1="$RED$EXIT_MSG$DEFAULT[$DARK_GREY\t $CYAN\W$DEFAULT]\\$ "
 
     # refresh tmux status bar in background - run in subshell so job # not shown
     ( ([[ "$TMUX" ]] && tmux refresh-client -S) & )
 }
 
 PROMPT_COMMAND=__prompt
-set -o vi                           # use vi mode
-export HISTSIZE=                    # unlimited history
-export HISTFILESIZE=                # unlimited history file
-export HISTCONTROL=erasedups        # don't save duplicate history entries
+set -o vi                               # use vi mode
+export HISTSIZE=                        # unlimited history
+export HISTFILESIZE=                    # unlimited history file
+export HISTCONTROL=erasedups            # don't save duplicate history entries
+export HISTTIMEFORMAT='%Y %b %d %T  '   # save timestamp with history entries
 
 if shopt | grep -q '^histappend'; then
     shopt -s histappend                 # append to history when writing it
