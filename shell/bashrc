@@ -29,21 +29,27 @@ __prompt() {
     local EXIT_CODE="$?"
     local DEFAULT='\[\e[m\]'
     local RED='\[\e[31;1m\]'
+    local GREEN='\[\e[32;1m\]'
     local CYAN='\[\e[36m\]'
     local DARK_GREY='\[\e[90m\]'
 
-    # set exit msg if exit code non-zero and new command was entered (i.e. user
-    # didn't just press <Enter>)
+    # only show exit msg if a cmd was executed (user didn't just hit <Enter>)
     __2nd_last_cmd="$__last_cmd"
     __last_cmd="$(history 1)"
-    if [ "$EXIT_CODE" != 0 ] && [ "$__last_cmd" != "$__2nd_last_cmd" ]; then
-        local EXIT_MSG="exit $EXIT_CODE\n"
+    if [ "$__last_cmd" != "$__2nd_last_cmd" ]; then
+        local EXIT_MSG=•
+    fi
+
+    # determine color of exit msg based on exit code
+    if [ "$EXIT_CODE" != 0 ]; then
+        local EXIT_COLOR="$RED"
+    else
+        local EXIT_COLOR="$GREEN"
     fi
 
     # set PS1:
-    # <exit msg>
-    # [<timestamp> <current directory>]$
-    PS1="$RED$EXIT_MSG$DEFAULT[$DARK_GREY\t $CYAN\w$DEFAULT]\\$ "
+    # <exit msg>[<timestamp> <current directory>]$
+    PS1="$EXIT_COLOR$EXIT_MSG$DEFAULT[$DARK_GREY\t $CYAN\w$DEFAULT]\\$ "
 
     # refresh tmux status bar in background - run in subshell so job # not shown
     ( ([[ "$TMUX" ]] && tmux refresh-client -S) & )
