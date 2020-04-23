@@ -32,6 +32,9 @@ __prompt() {
         PS1="\[\e[31;1m\]exit $EXIT\[\e[m\]\n" # "exit <exit status>"
     fi
     PS1="$PS1[\[\e[36m\]\w\[\e[m\]]\\$ " # "[<current directory>]$ "
+
+    # refresh tmux status bar in background - run in subshell so job # not shown
+    ( ([[ "$TMUX" ]] && tmux refresh-client -S) & )
 }
 
 PROMPT_COMMAND=__prompt
