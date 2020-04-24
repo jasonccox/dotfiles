@@ -50,6 +50,13 @@ setup_tmux() {
         linux*)     link tmux/gitmux-linux ~/.local/bin/gitmux ;;
         darwin*)    link tmux/gitmux-macos ~/.local/bin/gitmux ;;
     esac
+
+    echo Installing tmux-mem-cpu-load \(you may be prompted for you password\)...
+    if command -v yay &> /dev/null; then
+        yay --needed --noconfirm -S tmux-mem-cpu-load
+    elif command -v brew &> /dev/null; then
+        brew install tmux-mem-cpu-load
+    fi
 }
 
 setup_pim() {
