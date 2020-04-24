@@ -50,9 +50,6 @@ setup_tmux() {
         linux*)     link tmux/gitmux-linux ~/.local/bin/gitmux ;;
         darwin*)    link tmux/gitmux-macos ~/.local/bin/gitmux ;;
     esac
-
-    echo Installing tmux-mem and tmux-cpu \(you may be prompted for your password\)...
-    (command -v nvm && nvm deactivate; sudo npm i -g tmux-mem tmux-cpu)
 }
 
 setup_pim() {
