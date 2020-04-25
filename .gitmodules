@@ -34,3 +34,6 @@
 [submodule "tmux/tmux-current-pane-hostname"]
 	path = tmux/tmux-current-pane-hostname
 	url = https://github.com/soyuka/tmux-current-pane-hostname.git
+[submodule "tmux/mem-cpu-stats"]
+	path = tmux/mem-cpu-stats
+	url = git@github.com:jasonccox/mem-cpu-stats.git
