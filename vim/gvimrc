@@ -1,0 +1,4 @@
+set guioptions=c    " use console dialogs, not popups
+set guioptions+=d   " use dark theme
+set guioptions+=i   " use a Vim icon
+set guioptions+=M   " don't load a menubar
