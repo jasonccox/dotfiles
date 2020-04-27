@@ -16,3 +16,4 @@
 	sm = submodule
 	ps = push
 	pl = pull
+	psu = !git push --set-upstream origin $(git branch --show-current)
