@@ -7,9 +7,9 @@
 
 # ignore certain files
 --glob=!.git/*
---glob=!node_modules/*
---glob=!bower_components/*
+--glob=!**/node_modules/*
+--glob=!**/bower_components/*
 --glob=!*.min.css
 --glob=!*.min.js
 --glob=!*.swp
---glob=!.ccls-cache/*
+--glob=!**/.ccls-cache/*
