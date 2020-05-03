@@ -2,3 +2,11 @@ set guioptions=c    " use console dialogs, not popups
 set guioptions+=d   " use dark theme
 set guioptions+=i   " use a Vim icon
 set guioptions+=M   " don't load a menubar
+
+set guifont=Hack,Monaco " use same fonts as I use in Konsole, iTerm
+
+" MacVim specific configs
+if has("gui_macvim")
+    " quit when all windows closed
+    autocmd VimLeave * macaction terminate:
+endif
