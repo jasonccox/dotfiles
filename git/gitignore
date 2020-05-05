@@ -1,3 +1,7 @@
 # global gitignore
 
-*.swp
+# vim backup files
+.*.swp
+
+# nextcloud sync info
+._sync_*.db*
