@@ -32,14 +32,6 @@ setup_git() {
     link git/gitconfig ~/.gitconfig
 }
 
-setup_vscode() {
-    echo Setting up vscode...
-    mkdir -p "$HOME/.config/Code - OSS/User"
-    rm -rf "$HOME/.config/Code - OSS/User/settings.json" "$HOME/.config/Code - OSS/User/keybindings.json"
-    link vscode/settings.json "$HOME/.config/Code - OSS/User/settings.json"
-    link vscode/keybindings.json "$HOME/.config/Code - OSS/User/keybindings.json"
-}
-
 setup_tmux() {
     echo Setting up tmux...
     rm -f ~/.tmux.conf
@@ -50,13 +42,6 @@ setup_tmux() {
         linux*)     link tmux/gitmux-linux ~/.local/bin/gitmux ;;
         darwin*)    link tmux/gitmux-macos ~/.local/bin/gitmux ;;
     esac
-
-    echo Installing tmux-mem-cpu-load \(you may be prompted for you password\)...
-    if command -v yay &> /dev/null; then
-        yay --needed --noconfirm -S tmux-mem-cpu-load
-    elif command -v brew &> /dev/null; then
-        brew install tmux-mem-cpu-load
-    fi
 }
 
 setup_pim() {
@@ -90,7 +75,7 @@ setup_ssh() {
 
 # check for help arg
 if [ "$1" = help ]; then
-    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [vscode] [pim] [ssh]"
+    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh]"
     echo "If no arguments are provided, everything will be setup."
     exit 0
 fi
@@ -114,9 +99,6 @@ if [ "$1" ]; then
             git )       setup_git
                         shift
                         ;;
-            vscode )    setup_vscode
-                        shift
-                        ;;
             tmux )      setup_tmux
                         shift
                         ;;
@@ -133,7 +115,6 @@ else
     setup_shell
     setup_vim
     setup_git
-    setup_vscode
     setup_tmux
     setup_pim
     setup_ssh
