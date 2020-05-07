@@ -25,3 +25,6 @@
 [submodule "tmux/mem-cpu-stats"]
 	path = tmux/mem-cpu-stats
 	url = git@github.com:jasonccox/mem-cpu-stats.git
+[submodule "vim/pack/util/start/vimade"]
+	path = vim/pack/util/start/vimade
+	url = https://github.com/TaDaa/vimade.git
