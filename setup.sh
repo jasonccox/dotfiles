@@ -18,7 +18,7 @@ setup_vim() {
     echo Setting up vim...
     rm -rf ~/.vim ~/.clang-format
     link vim ~/.vim
-    link clang_format ~/.clang-format
+    link clang-format ~/.clang-format
     if command -v yay &> /dev/null; then
         echo Installing C language server \(you may be prompted for your password\)...
         yay -S --noconfirm ccls
