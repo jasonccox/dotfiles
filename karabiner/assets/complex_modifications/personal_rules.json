@@ -59,6 +59,43 @@
       ]
     },
     {
+      "description": "Ctrl-Shift-V as Cmd-V (only in Terminal/iTerm2)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": 25,
+            "modifiers": {
+              "mandatory": [
+                "left_control",
+                "left_shift"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": 25,
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "Option+Tab to Command+Tab",
       "manipulators": [
         {
