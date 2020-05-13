@@ -73,6 +73,13 @@ setup_ssh() {
     link ssh/config ~/.ssh/config
 }
 
+setup_karabiner() {
+    echo Settinp up Karabiner...
+    mkdir -p ~/.config/karabiner
+    rm -rf ~/.config/karabiner
+    link karabiner ~/.config/karabiner
+}
+
 # check for help arg
 if [ "$1" = help ]; then
     echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh]"
@@ -108,6 +115,9 @@ if [ "$1" ]; then
             ssh )       setup_ssh
                         shift
                         ;;
+            karabiner ) setup_karabiner
+                        shift
+                        ;;
         esac
     done
 else
@@ -118,4 +128,5 @@ else
     setup_tmux
     setup_pim
     setup_ssh
+    setup_karabiner
 fi
