@@ -36,12 +36,6 @@ setup_tmux() {
     echo Setting up tmux...
     rm -f ~/.tmux.conf
     link tmux/tmux.conf ~/.tmux.conf
-
-    mkdir -p ~/.local/bin
-    case "$OSTYPE" in
-        linux*)     link tmux/gitmux-linux ~/.local/bin/gitmux ;;
-        darwin*)    link tmux/gitmux-macos ~/.local/bin/gitmux ;;
-    esac
 }
 
 setup_pim() {

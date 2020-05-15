@@ -50,9 +50,6 @@ __prompt() {
     # set PS1:
     # <exit msg>[<timestamp> <current directory>]$
     PS1="$EXIT_COLOR$EXIT_MSG$DEFAULT[$DARK_GREY\t $CYAN\w$DEFAULT]\\$ "
-
-    # refresh tmux status bar in background - run in subshell so job # not shown
-    ( ([[ "$TMUX" ]] && tmux refresh-client -S) & )
 }
 
 PROMPT_COMMAND=__prompt                 # use above function to create prompt
