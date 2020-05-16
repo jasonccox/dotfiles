@@ -25,35 +25,10 @@ export PATH
 # BASH SETTINGS
 ################################################################################
 
-__prompt() {
-    local EXIT_CODE="$?"
-    local DEFAULT='\[\e[m\]'
-    local RED='\[\e[31;1m\]'
-    local GREEN='\[\e[32;1m\]'
-    local CYAN='\[\e[36m\]'
-    local DARK_GREY='\[\e[90m\]'
+# use a fancy prompt if possible
+[ -f ~/dotfiles/shell/use-git-prompt.bash ] && \
+    . ~/dotfiles/shell/use-git-prompt.bash
 
-    # only show exit msg if a cmd was executed (user didn't just hit <Enter>)
-    __2nd_last_cmd="$__last_cmd"
-    __last_cmd="$(history 1)"
-    if [ "$__last_cmd" != "$__2nd_last_cmd" ]; then
-        local EXIT_MSG=•
-    fi
-
-    # determine color of exit msg based on exit code
-    if [ "$EXIT_CODE" != 0 ]; then
-        local EXIT_COLOR="$RED"
-    else
-        local EXIT_COLOR="$GREEN"
-    fi
-
-    # set PS1:
-    # <exit msg>[<timestamp> <current directory>]$
-    PS1="$EXIT_COLOR$EXIT_MSG$DEFAULT[$DARK_GREY\t $CYAN\w$DEFAULT]\\$ "
-}
-
-PROMPT_COMMAND=__prompt                 # use above function to create prompt
-PROMPT_DIRTRIM=2                        # only show two deepest dirs with '\w'
 set -o vi                               # use vi mode
 export HISTSIZE=                        # unlimited history
 export HISTFILESIZE=                    # unlimited history file
