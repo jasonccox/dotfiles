@@ -24,6 +24,13 @@ __prompt() {
         local exit_msg="$GREEN✔ $WHITE"
     fi
 
+    # only show exit msg if a cmd was executed (user didn't just hit <Enter>)
+    __2nd_last_cmd="$__last_cmd"
+    __last_cmd="$(history 1)"
+    if [ "$__last_cmd" == "$__2nd_last_cmd" ]; then
+        exit_msg=""
+    fi
+
     # try to use fancy path printer; otherwise fall back on \w
     local dir
     if [ -n "$__prompt_use_path_printer" ]; then
