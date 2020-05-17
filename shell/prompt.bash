@@ -52,7 +52,10 @@ __prompt() {
         fi
     fi
 
-    PS1="$exit_msg[ $dir$git ] \\$ $DEFAULT"
+    PS1="$exit_msg$WHITE[ $dir$git ] \\$ $DEFAULT"
+
+    # refresh tmux status bar in background - run in subshell so job # not shown
+    ( ([[ "$TMUX" ]] && tmux refresh-client -S) & )
 
     return $exit_code
 }
