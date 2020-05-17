@@ -26,8 +26,7 @@ export PATH
 ################################################################################
 
 # use a fancy prompt if possible
-[ -f ~/dotfiles/shell/use-git-prompt.bash ] && \
-    . ~/dotfiles/shell/use-git-prompt.bash
+[ -f ~/dotfiles/shell/prompt.bash ] && . ~/dotfiles/shell/prompt.bash
 
 set -o vi                               # use vi mode
 export HISTSIZE=                        # unlimited history
