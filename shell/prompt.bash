@@ -8,7 +8,6 @@ __prompt() {
     # preserve exit status
     local exit_code="$?"
 
-    # create part before git prompt
     local DEFAULT='\[\e[m\]'
     local WHITE='\[\e[97;1m\]'
     local RED='\[\e[31;1m\]'
@@ -19,9 +18,9 @@ __prompt() {
 
     # determine exit msg based on exit code
     if [ "$exit_code" != 0 ]; then
-        local exit_msg="$RED✖ $WHITE"
+        local exit_msg="${RED}✖ $WHITE"
     else
-        local exit_msg="$GREEN✔ $WHITE"
+        local exit_msg="${GREEN}✔ $WHITE"
     fi
 
     # only show exit msg if a cmd was executed (user didn't just hit <Enter>)
@@ -34,9 +33,9 @@ __prompt() {
     # try to use fancy path printer; otherwise fall back on \w
     local dir
     if [ -n "$__prompt_use_path_printer" ]; then
-        dir="🖿  $(~/dotfiles/scripts/path-printer.bash -l 20)"
+        dir="$__FOLDER_ICON$(~/dotfiles/scripts/path-printer.bash -l 20)"
     else
-        dir="🖿  \w"
+        dir="$__FOLDER_ICON\w"
     fi
 
     # only include git status if not in tmux - it's in the status bar there
@@ -44,11 +43,11 @@ __prompt() {
         if [ -n "$__prompt_use_git" ]; then
             local git="$(~/dotfiles/scripts/git-info.bash \
                 --prefix '  ⎇  ' \
-                --clean "$GREEN✔$WHITE" \
-                --modified "$REDΔ$WHITE" \
-                --untracked "$MAGENTA✚$WHITE" \
-                --staged "$GREEN●$WHITE" \
-                --stashed "$BLUE⚑$WHITE")"
+                --clean "${GREEN}✔$WHITE" \
+                --modified "${RED}Δ$WHITE" \
+                --untracked "${MAGENTA}✚$WHITE" \
+                --staged "${GREEN}●$WHITE" \
+                --stashed "${BLUE}⚑$WHITE")"
         fi
     fi
 
@@ -68,6 +67,12 @@ fi
 # use script providing path printing if present
 if [ -f ~/dotfiles/scripts/path-printer.bash ]; then
     __prompt_use_path_printer=yes
+fi
+
+# set folder icon if not already set - it's stored in a variable so it can be
+# overwritten on systems that don't support the symbol
+if [ -z "$__FOLDER_ICON" ]; then
+    __FOLDER_ICON='🖿  '
 fi
 
 PROMPT_DIRTRIM=2 # only show two deepest dirs with '\w'
