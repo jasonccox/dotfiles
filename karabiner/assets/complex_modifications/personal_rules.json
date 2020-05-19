@@ -2,7 +2,7 @@
   "title": "Personal Rules",
   "rules": [
     {
-      "description": "Swap Left Cmd with Ctrl (except in Terminal/iTerm2)",
+      "description": "Swap Left Cmd with Ctrl (except in Terminal/iTerm2, Vim)",
       "manipulators": [
         {
           "type": "basic",
@@ -25,7 +25,8 @@
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
+                "^com\\.googlecode\\.iterm2$",
+                "^org\\.vim\\.MacVim$"
               ]
             }
           ]
@@ -51,7 +52,8 @@
               "type": "frontmost_application_unless",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
+                "^com\\.googlecode\\.iterm2$",
+                "^org\\.vim\\.MacVim$"
               ]
             }
           ]
@@ -59,7 +61,7 @@
       ]
     },
     {
-      "description": "Ctrl-Shift-V as Cmd-V (only in Terminal/iTerm2)",
+      "description": "Ctrl-Shift-V as Cmd-V (only in Terminal/iTerm2, Vim)",
       "manipulators": [
         {
           "type": "basic",
@@ -88,7 +90,8 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$"
+                "^com\\.googlecode\\.iterm2$",
+                "^org\\.vim\\.MacVim$"
               ]
             }
           ]
