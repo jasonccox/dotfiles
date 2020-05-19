@@ -4,13 +4,25 @@ set nocompatible            " don't worry about being compatible with Vi
 " COLORS
 " =============================================================================
 
-" make background true black
-let g:jellybeans_overrides = {
-\    'background': {        
-\        'guibg': '000000',
-\        'ctermbg': '000000'
-\    }
-\}
+" make backgound transparent in tmux so tmux background color change on
+" inactive panes is shown
+if !empty($TMUX)
+    let g:jellybeans_overrides = {
+    \    'background': {
+    \        'guibg': 'none',
+    \        'ctermbg': 'none'
+    \    }
+    \}
+" otherwise, just go all black
+else
+    let g:jellybeans_overrides = {
+    \    'background': {
+    \        'guibg': '000000',
+    \        'ctermbg': '000000'
+    \    }
+    \}
+endif
+
 colorscheme jellybeans      " my preferred colorscheme
 syntax enable               " enable syntax highlighting
 set cursorline              " highlight current line
