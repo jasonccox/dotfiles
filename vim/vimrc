@@ -155,4 +155,5 @@ if isdirectory("/usr/local/opt/fzf")
     set rtp+=/usr/local/opt/fzf
 endif
 
-let g:AutoPairsCenterLine=0 " don't move to center when pressing <CR> after {
+let g:AutoPairsCenterLine = 0 " don't move to center when pressing <CR> after {
+let g:AutoPairsMultilineClose = 0 " don't jump to closing bracket on next line
