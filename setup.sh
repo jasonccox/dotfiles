@@ -79,13 +79,15 @@ setup_fonts() {
 
     if command -v yay &> /dev/null; then
         echo You may be prompted for you password to install the fonts
-        yay -Ss --noconfirm nerd-fonts-hack
+        yay -S --noconfirm nerd-fonts-hack
     elif command -v brew &> /dev/null; then
         brew cask install font-hack-nerd-font
     else
         echo Neither yay nor brew is available. You\'ll have to install the \
             Hack Nerd fonts yourself.
     fi
+
+    echo Be sure to set your terminal font to Hack Nerd Font Mono!
 }
 
 # check for help arg
