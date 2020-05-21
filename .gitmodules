@@ -22,3 +22,6 @@
 [submodule "vim/pack/util/start/vim-tmux-navigator"]
 	path = vim/pack/util/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "tmux/tmux-current-pane-hostname"]
+	path = tmux/tmux-current-pane-hostname
+	url = https://github.com/soyuka/tmux-current-pane-hostname.git
