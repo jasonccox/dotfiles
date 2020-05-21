@@ -5,14 +5,14 @@
 
 EXEC_NAME="$0"
 
-PREFIX='⎇  '
-AHEAD_FLAG='↑'
-BEHIND_FLAG='↓'
-MODIFIED_FLAG='Δ'
-STAGED_FLAG='●'
-STASHED_FLAG='⚑'
-UNTRACKED_FLAG='✚'
-CLEAN_FLAG='✔'
+PREFIX='שׂ '
+AHEAD_FLAG=''
+BEHIND_FLAG=''
+MODIFIED_FLAG=''
+STAGED_FLAG=''
+STASHED_FLAG=''
+UNTRACKED_FLAG=''
+CLEAN_FLAG=''
 
 usage() {
     echo \
@@ -67,7 +67,12 @@ OPTIONS
 
 -u | --untracked FLAG
     Print FLAG when there are untracked files in the git repository. Default
-    '$UNTRACKED_FLAG'"
+    '$UNTRACKED_FLAG'
+
+NOTES
+
+The default symbols look best with a monospaced nerd font. (See
+https://www.nerdfonts.com/)"
 }
 
 flags() {

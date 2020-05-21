@@ -93,7 +93,6 @@ bind -x '"\C-f": fzf-file-widget'
 
 export EDITOR=vim   # use vim as preferred editor
 export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
-export __FOLDER_ICON='🖿  ' # icon used in prompt and tmux for current dir
 
 # enable tab completion for common commands
 [[ -f /usr/share/bash-completion/bash-completion ]] && \

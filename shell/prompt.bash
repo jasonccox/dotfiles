@@ -33,21 +33,23 @@ __prompt() {
     # try to use fancy path printer; otherwise fall back on \w
     local dir
     if [ -n "$__prompt_use_path_printer" ]; then
-        dir="$__FOLDER_ICON$(~/dotfiles/scripts/path-printer.bash -l 20)"
+        dir=" $(~/dotfiles/scripts/path-printer.bash -l 20)"
     else
-        dir="$__FOLDER_ICON\w"
+        dir=" \w"
     fi
 
     # only include git status if not in tmux - it's in the status bar there
     if [ -z "$TMUX" ]; then
         if [ -n "$__prompt_use_git" ]; then
             local git="$(~/dotfiles/scripts/git-info.bash \
-                --prefix '  ⎇  ' \
-                --clean "${GREEN}✔$WHITE" \
-                --modified "${RED}Δ$WHITE" \
-                --untracked "${MAGENTA}✚$WHITE" \
-                --staged "${GREEN}●$WHITE" \
-                --stashed "${BLUE}⚑$WHITE")"
+                --prefix '  שׂ ' \
+                --clean "${GREEN}$WHITE" \
+                --modified "${RED}$WHITE" \
+                --untracked "${MAGENTA}$WHITE" \
+                --staged "${GREEN}$WHITE" \
+                --stashed "${BLUE}$WHITE") \
+                --ahead '' \
+                --behind ''"
         fi
     fi
 
