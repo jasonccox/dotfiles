@@ -47,9 +47,9 @@ __prompt() {
                 --modified "${RED}$WHITE" \
                 --untracked "${MAGENTA}$WHITE" \
                 --staged "${GREEN}$WHITE" \
-                --stashed "${BLUE}$WHITE") \
+                --stashed "${BLUE}$WHITE" \
                 --ahead '' \
-                --behind ''"
+                --behind '')"
         fi
     fi
 
