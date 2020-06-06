@@ -38,6 +38,16 @@ setup_ssh() {
     mkdir -p ~/.ssh
     rm -f ~/.ssh/config
     link ssh/config ~/.ssh/config
+
+    if [ -f ~/.ssh/authorized_keys ]; then
+        read \
+            -p "An authorized_keys file already exists - do you want to overwrite it? (y/N) " \
+            answer
+        if [[ "$answer" == y* ]] || [[ "$answer" == Y* ]]; then
+            rm -f ~/.ssh/authorized_keys
+            link ssh/authorized_keys ~/.ssh/authorized_keys
+        fi
+    fi
 }
 
 # check for help arg
