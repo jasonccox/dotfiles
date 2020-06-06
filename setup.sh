@@ -16,14 +16,9 @@ setup_shell() {
 
 setup_vim() {
     echo Setting up vim...
-    rm -rf ~/.vim ~/.clang-format
+    rm -rf ~/.vim
     link vim ~/.vim
-    link clang-format ~/.clang-format
-    if command -v yay &> /dev/null; then
-        echo Installing C language server \(you may be prompted for your password\)...
-        yay -S --noconfirm ccls
-    fi
-    vim +"CocInstall -sync coc-tsserver coc-html coc-css coc-yaml coc-sh" +"silent! helptags ALL" +"q"
+    vim +'silent! helptags ALL' +q
 }
 
 setup_git() {
@@ -38,28 +33,6 @@ setup_tmux() {
     link tmux/tmux.conf ~/.tmux.conf
 }
 
-setup_pim() {
-    echo Setting up PIM...
-    rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/config
-    mkdir -p ~/.config/khal ~/.config/todoman ~/.config/vdirsyncer
-    link pim/khal.conf ~/.config/khal/config
-    link pim/todoman.conf ~/.config/todoman/todoman.conf
-    link pim/vdirsyncer.conf ~/.config/vdirsyncer/config
-
-    echo Enter password for user jason for cloud.jasoncarloscox.com:
-    keyring set cloud.jasoncarloscox.com jason
-
-    mkdir -p ~/cal
-
-    vdirsyncer discover
-    vdirsyncer sync
-    vdirsyncer metasync
-
-    rm -f ~/.config/autostart-scripts/vdir_autosync
-    mkdir -p ~/.config/autostart-scripts/
-    link pim/vdir_autosync ~/.config/autostart-scripts/vdir_autosync
-}
-
 setup_ssh() {
     echo Setting up SSH...
     mkdir -p ~/.ssh
@@ -67,32 +40,9 @@ setup_ssh() {
     link ssh/config ~/.ssh/config
 }
 
-setup_karabiner() {
-    echo Settinp up Karabiner...
-    mkdir -p ~/.config/karabiner
-    rm -rf ~/.config/karabiner
-    link karabiner ~/.config/karabiner
-}
-
-setup_fonts() {
-    echo Setting up fonts...
-
-    if command -v yay &> /dev/null; then
-        echo You may be prompted for you password to install the fonts
-        yay -S --noconfirm nerd-fonts-hack
-    elif command -v brew &> /dev/null; then
-        brew cask install font-hack-nerd-font
-    else
-        echo Neither yay nor brew is available. You\'ll have to install the \
-            Hack Nerd fonts yourself.
-    fi
-
-    echo Be sure to set your terminal font to Hack Nerd Font Mono!
-}
-
 # check for help arg
 if [ "$1" = help ]; then
-    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner] [fonts]"
+    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [ssh]"
     echo "If no arguments are provided, everything will be setup."
     exit 0
 fi
@@ -119,16 +69,7 @@ if [ "$1" ]; then
             tmux )      setup_tmux
                         shift
                         ;;
-            pim )       setup_pim
-                        shift
-                        ;;
             ssh )       setup_ssh
-                        shift
-                        ;;
-            karabiner ) setup_karabiner
-                        shift
-                        ;;
-            fonts )     setup_fonts
                         shift
                         ;;
         esac
@@ -139,8 +80,5 @@ else
     setup_vim
     setup_git
     setup_tmux
-    setup_pim
     setup_ssh
-    setup_karabiner
-    setup_fonts
 fi
