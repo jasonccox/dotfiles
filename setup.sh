@@ -66,14 +66,19 @@ setup_ssh() {
     rm -f ~/.ssh/config
     link ssh/config ~/.ssh/config
 
+    link_authorized_keys=yes
     if [ -f ~/.ssh/authorized_keys ]; then
         read \
             -p "An authorized_keys file already exists - do you want to overwrite it? (y/N) " \
             answer
-        if [[ "$answer" == y* ]] || [[ "$answer" == Y* ]]; then
-            rm -f ~/.ssh/authorized_keys
-            link ssh/authorized_keys ~/.ssh/authorized_keys
+        if [[ "$answer" != y* ]] && [[ "$answer" != Y* ]]; then
+            link_authorized_keys=no
         fi
+    fi
+
+    if [ "$link_authorized_keys" = yes ]; then
+        rm -f ~/.ssh/authorized_keys
+        link ssh/authorized_keys ~/.ssh/authorized_keys
     fi
 }
 
