@@ -18,9 +18,9 @@ __prompt() {
 
     # determine exit msg based on exit code
     if [ "$exit_code" != 0 ]; then
-        local exit_msg="${RED}✖ $WHITE"
+        local exit_msg="${RED} $WHITE"
     else
-        local exit_msg="${GREEN}✔ $WHITE"
+        local exit_msg="${GREEN} $WHITE"
     fi
 
     # only show exit msg if a cmd was executed (user didn't just hit <Enter>)
