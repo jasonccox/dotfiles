@@ -13,3 +13,10 @@
 --glob=!*.min.js
 --glob=!*.swp
 --glob=!**/.ccls-cache/*
+--glob=!*.mp4
+--glob=!*.mov
+--glob=!*.png
+--glob=!*.jpg
+--glob=!*.jpeg
+--glob=!*.bmp
+--glob=!*.gif
