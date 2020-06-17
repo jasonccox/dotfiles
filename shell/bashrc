@@ -94,6 +94,10 @@ bind -x '"\C-f": fzf-file-widget'
 export EDITOR=vim   # use vim as preferred editor
 export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
 
+# disable flow control when in vim to map ctrl-s and ctrl-q
+[[ -f ~/dotfiles/vim/no-flow-control.bash ]] && \
+    . ~/dotfiles/vim/no-flow-control.bash
+
 # enable tab completion for common commands
 [[ -f /usr/share/bash-completion/bash-completion ]] && \
     . /usr/share/bash-completion/bash-completion

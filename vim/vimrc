@@ -145,6 +145,10 @@ nnoremap <Leader>b :buffers<CR>:b<Space>
 " easy access to ripgrep
 nnoremap <Leader>s <Esc>:Rg<Space>
 
+" easy saving from insert or normal mode - requires no-flow-control.bash
+nnoremap <silent> <C-S> :update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+
 " =============================================================================
 " MISC
 " =============================================================================
