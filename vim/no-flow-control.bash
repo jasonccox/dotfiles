@@ -6,11 +6,7 @@
 
 vim() {
     # save stty options
-    if [ "$(uname)" = Darwin ]; then
-        local sttyopts="$(stty -g)"
-    else
-        local sttyopts="$(stty -save)"
-    fi
+    local sttyopts="$(stty -g)"
 
     # turn off flow control
     stty stop '' -ixoff
