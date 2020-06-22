@@ -25,3 +25,6 @@
 [submodule "tmux/tmux-current-pane-hostname"]
 	path = tmux/tmux-current-pane-hostname
 	url = https://github.com/soyuka/tmux-current-pane-hostname.git
+[submodule "vim/pack/util/start/vim-gitgutter"]
+	path = vim/pack/util/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

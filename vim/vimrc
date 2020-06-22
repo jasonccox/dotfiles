@@ -173,3 +173,6 @@ endif
 
 let g:AutoPairsCenterLine = 0 " don't move to center when pressing <CR> after {
 let g:AutoPairsMultilineClose = 0 " don't jump to closing bracket on next line
+
+let g:gitgutter_grep = 'rg'             " use rg instead of grep
+let g:gitgutter_sign_allow_clobber = 0  " don't clobber other gutter signs
