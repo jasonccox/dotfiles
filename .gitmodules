@@ -28,3 +28,6 @@
 [submodule "vim/pack/util/start/vim-gitgutter"]
 	path = vim/pack/util/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/pack/util/start/vim-snippets"]
+	path = vim/pack/util/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git

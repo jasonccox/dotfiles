@@ -36,5 +36,10 @@
         "languageServerHaskell": {}
       }
     }
+  },
+
+  "snippets.userSnippetsDirectory": "~/dotfiles/vim/ultisnips",
+  "snippets.extends": {
+    "typescriptreact": ["typescript", "javascript"]
   }
 }
