@@ -12,7 +12,8 @@ else
 endif
 
 let g:jellybeans_overrides = {
-\    'background': { 'guibg': s:bg, 'ctermbg': s:bg },
+\   'background': { 'guibg': s:bg, 'ctermbg': s:bg },
+\   'ColorColumn': { 'guibg': '101010', 'ctermfg': '101010' },
 \   'SignColumn': { 'guibg': s:bg, 'ctermbg': s:bg },
 \   'GitGutterAdd': { 'guifg': '19BF10', 'ctermfg': '19BF10' },
 \   'GitGutterChange': { 'guifg': '1696FF', 'ctermfg': '1696FF' },
@@ -21,3 +22,5 @@ let g:jellybeans_overrides = {
 \}
 
 runtime colors/jellybeans.vim
+
+let colors_name = "jellybeans-custom"
