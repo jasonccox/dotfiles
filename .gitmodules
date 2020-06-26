@@ -31,3 +31,6 @@
 [submodule "vim/pack/util/start/vim-snippets"]
 	path = vim/pack/util/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "vim/pack/util/start/vim-tmux-focus-events"]
+	path = vim/pack/util/start/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
