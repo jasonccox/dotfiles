@@ -70,7 +70,7 @@ let g:markdown_folding=1    " make folding work for markdown - must be set befor
 set laststatus=2            " always display the status line
 set statusline=%f\          " filename
 set statusline+=%h%w%r%m    " flags
-set statusline+=%y          " filetype 
+set statusline+=%y          " filetype
 set statusline+=%=          " switch to right side of screen
 set statusline+=%c,\        " cursor column
 set statusline+=%l\ /\ %L\  " cursor line / total lines
@@ -162,6 +162,3 @@ endif
 
 let g:AutoPairsCenterLine = 0 " don't move to center when pressing <CR> after {
 let g:AutoPairsMultilineClose = 0 " don't jump to closing bracket on next line
-
-let g:gitgutter_grep = 'rg'             " use rg instead of grep
-let g:gitgutter_sign_priority=9         " lower than coc.nvim's signs
