@@ -30,6 +30,18 @@ The following are commands/mappings I'm working on learning and using.
 :{range}!{filter}	Filter {range} lines through external program {filter}
 
 
+Mappings from vim-|surround|:
+
+
+ys{obj}{s}		Surround the text object {obj} with the symbol/tag {s}
+
+yss{s}			Surround the entire line with the symbol/tag {s}
+
+cs{s1}{s2}		Change the surrounding symbol/tag {s1} to {s2}
+
+ds{s}			Delete the surrounding symbol/tag {s}
+
+
 ==============================================================================
 COC.NVIM						*cheatsheet-coc*
 

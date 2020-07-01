@@ -34,3 +34,6 @@
 [submodule "vim/pack/util/start/vim-tmux-focus-events"]
 	path = vim/pack/util/start/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule "vim/pack/util/start/vim-surround"]
+	path = vim/pack/util/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
