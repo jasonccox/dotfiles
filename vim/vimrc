@@ -137,6 +137,10 @@ nnoremap <Leader>s <Esc>:Rg<Space>
 nnoremap <silent> <C-S> :update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
+" easy access to personal cheatsheet
+
+nnoremap <Leader>? :help cheatsheet-contents<CR>
+
 " =============================================================================
 " MISC
 " =============================================================================

@@ -1,0 +1,178 @@
+*cheatsheet.txt*	For Vim version 8.x	Last change: 2020 July 1
+
+Personal Vim cheatsheet					*cheatsheet*
+
+This help file contains commands/mappings I'm trying to learn or just want to
+be able to find easily. I also try to keep a reference to all of my own custom
+key mappings here.
+
+Author: Jason Cox <dev@jasoncarloscox.com>
+
+
+==============================================================================
+CONTENTS						*cheatsheet-contents*
+
+
+To Learn		|cheatsheet-learn|
+Coc.nvim		|cheatsheet-coc|
+GitGutter		|cheatsheet-gitgutter|
+Misc. Mappings		|cheatsheet-misc-mappings|
+Indentation		|cheatsheet-indentation|
+
+
+==============================================================================
+TO LEARN						*cheatsheet-learn*
+
+
+The following are commands/mappings I'm working on learning and using.
+
+
+:{range}!{filter}	Filter {range} lines through external program {filter}
+
+
+==============================================================================
+COC.NVIM						*cheatsheet-coc*
+
+
+Insert mode mappings:				 *cheatsheet-coc-insert*
+
+
+<C-Space>	Refresh coc.nvim
+
+
+Normal mode mappings:				 *cheatsheet-coc-normal*
+
+<Leader>ac	Do code action on current line
+
+<Leader>an	Do default action for next item
+
+<Leader>ap	Do default action for previous item
+
+<Leader>]d	Go to next diagnostic
+
+<Leader>[d	Go to previous diagnostic
+
+<Leader>fc	Quick-fix problem on current line
+
+<Leader>gd	Go to symbol definition
+
+<Leader>gi	Go to implementation
+
+<Leader>gr	Go to references
+
+<Leader>gt	Go to type definition
+
+<Leader>la	List all diagnostics
+
+<Leader>lc	List all commands
+
+<Leader>le	List all extensions
+
+<Leader>lo	List outline of current document
+
+<Leader>lr	Resume latest coc list
+
+<Leader>ls	List symbols
+
+<Leader>rn	Rename current word
+
+
+Visual mode mappings:				 *cheatsheet-coc-visual*
+
+
+<Leader>a	Do code action in selected region
+
+<Leader>fm	Format selected region
+
+
+Text objects:						*cheatsheet-coc-objects*
+
+
+af		Around function
+
+if		Inside function
+
+
+Commands:					*cheatsheet-coc-commands*
+
+
+:Fold		Fold current buffer
+
+:Format		Format current buffer
+
+:OI		Organize imports of current buffer
+
+
+==============================================================================
+GITGUTTER						*cheatsheet-gitgutter*
+
+
+Normal mode mappings:				*cheatsheet-gitgutter-normal*
+
+
+<Leader>[h	Jump to the next hunk
+
+<Leader>]h	Jump to the previous hunk
+
+<Leader>hp	Preview the hunk under the cursor
+
+<Leader>hs	Stage the hunk under the cursor
+
+<Leader>hu	Undo the hunk under the cursor
+
+
+Text objects:					*cheatsheet-gitgutter-objects*
+
+
+ah		Current hunk, including trailing empty lines
+
+ih		Current hunk
+
+
+==============================================================================
+MISC. MAPPINGS					*cheatsheet-misc-mappings*
+
+
+Insert mode mappings:				*cheatsheet-misc-insert*
+
+
+<C-S>		Update file
+
+
+Normal mode mappings:				*cheatsheet-misc-normal*
+
+
+<C-S>		Update file
+
+<Leader>?	Open this help file
+
+<Leader>b	Show list of buffers with prepared buffer command
+
+<Leader>o	Open a file with FZF
+
+<Leader>s	Search project directory with ripgrep
+
+
+==============================================================================
+INDENTATION					*cheatsheet-indentation*
+
+
+I can't ever remember all the indentation options, so here they are:
+
+
+'tabstop'	number of visual spaces per tab
+
+'softtabstop'	number of spaces inserted when tab key is pressed
+
+'shiftwidth'	number of columns to indent (e.g. with > or <)
+
+'expandtab'	whether to insert spaces when tab key is pressed
+
+'autoindent'	whether to copy indent from current line when starting a new
+		line
+
+'smartindent'	whether to do smart indenting (i.e. based on syntax) when
+		starting a new line - only use with 'autoindent'
+
+
+vim: ts=8 sts=8 noet ft=help tw=78
