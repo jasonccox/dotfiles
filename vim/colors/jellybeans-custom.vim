@@ -25,6 +25,8 @@ let g:jellybeans_overrides = {
 \                              'ctermfg': '000000', 'ctermbg': '403c41' }
 \}
 
+let g:jellybeans_use_term_italics = 1
+
 runtime colors/jellybeans.vim
 
 let colors_name = "jellybeans-custom"
