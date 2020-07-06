@@ -20,9 +20,11 @@ let g:jellybeans_overrides = {
 \   'GitGutterDelete': { 'guifg': 'FF1622', 'ctermfg': 'FF1622' },
 \   'GitGutterChangeDelete': { 'guifg': '7F16FF', 'ctermfg': '7F16FF' },
 \   'StatusLineUnfocused': { 'guifg': 'bbbbbb', 'guibg': '403c41',
-\                            'ctermfg': 'bbbbbb', 'ctermbg': '403c41' },
+\                            'ctermfg': 'bbbbbb', 'ctermbg': '403c41',
+\                            'attr': 'italic' },
 \   'StatusLineNCUnfocused': { 'guifg': '000000', 'guibg': '403c41',
-\                              'ctermfg': '000000', 'ctermbg': '403c41' }
+\                              'ctermfg': '000000', 'ctermbg': '403c41',
+\                              'attr': 'italic' },
 \}
 
 let g:jellybeans_use_term_italics = 1
@@ -35,10 +37,17 @@ let colors_name = "jellybeans-custom"
 " to work in tmux, and StatuLineUnfocused and StatusLineNCUnfocused must not be
 " exactly the same or else vim will put carets (^^^) in the active window's
 " status line.
-autocmd FocusLost * highlight! link StatusLine StatusLineUnfocused
-autocmd FocusLost * highlight! link StatusLineNC StatusLineNCUnfocused
-autocmd FocusGained * highlight! link StatusLine NONE
-autocmd FocusGained * highlight! link StatusLineNC NONE
+augroup jellybeans-custom
+    autocmd!
+
+    autocmd FocusLost * highlight! link StatusLine StatusLineUnfocused
+    autocmd FocusLost * highlight! link StatusLineNC StatusLineNCUnfocused
+    autocmd FocusLost * redraw!
+
+    autocmd FocusGained * highlight! link StatusLine NONE
+    autocmd FocusGained * highlight! link StatusLineNC NONE
+    autocmd FocusGained * redraw!
+augroup END
 
 " Disable coc.nvim's underlining because it doesn't always go away when it
 " should. Run on VimEnter as well because coc.nvim sets it late in startup, even
