@@ -36,6 +36,10 @@ setup_tmux() {
     echo Setting up tmux...
     rm -f ~/.tmux.conf
     link tmux/tmux.conf ~/.tmux.conf
+
+    if ! infocmp tmux-256color &> /dev/null; then
+        tic -xe tmux-256color tmux/tmux-256color.terminfo
+    fi
 }
 
 setup_pim() {
