@@ -26,4 +26,4 @@
 [mergetool]
 	prompt = false
 [pull]
-	rebase = true
+	ff = only
