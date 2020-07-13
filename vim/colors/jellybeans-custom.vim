@@ -42,11 +42,11 @@ augroup jellybeans-custom
 
     autocmd FocusLost * highlight! link StatusLine StatusLineUnfocused
     autocmd FocusLost * highlight! link StatusLineNC StatusLineNCUnfocused
-    autocmd FocusLost * redraw!
+    autocmd FocusLost * redrawstatus!
 
     autocmd FocusGained * highlight! link StatusLine NONE
     autocmd FocusGained * highlight! link StatusLineNC NONE
-    autocmd FocusGained * redraw!
+    autocmd FocusGained * redrawstatus!
 augroup END
 
 " Disable coc.nvim's underlining because it doesn't always go away when it
