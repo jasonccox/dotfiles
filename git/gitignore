@@ -5,3 +5,6 @@
 
 # nextcloud sync info
 ._sync_*.db*
+
+# ccls files
+.ccls-cache
