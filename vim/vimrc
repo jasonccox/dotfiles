@@ -143,8 +143,13 @@ nnoremap <silent> <C-S> :update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 
 " easy access to personal cheatsheet
-
 nnoremap <Leader>? :help cheatsheet-contents<CR>
+
+" show all occurrences of word under cursor in current buffer in location list
+fun! FindInFile()
+    execute 'lvimgrep /\C'.expand('<cword>').'/gj '.expand('%') | :lopen
+endfun
+nnoremap <Leader>8 :execute FindInFile()<CR>
 
 " =============================================================================
 " MISC

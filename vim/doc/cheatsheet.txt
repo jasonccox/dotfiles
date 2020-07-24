@@ -29,6 +29,9 @@ The following are commands/mappings I'm working on learning and using.
 
 :{range}!{filter}	Filter {range} lines through external program {filter}
 
+<Leader>8		Show occurrences of the current word in the current
+			buffer in the location list
+
 
 Mappings from vim-|surround|:
 
@@ -163,6 +166,9 @@ Normal mode mappings:				*cheatsheet-misc-normal*
 <Leader>o	Open a file with FZF
 
 <Leader>s	Search project directory with ripgrep
+
+<Leader>8	Show occurrences of the current word in the current buffer in
+		the location list
 
 
 ==============================================================================
