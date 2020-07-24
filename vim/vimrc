@@ -71,13 +71,18 @@ set laststatus=2            " always display the status line
 set statusline=%f\          " filename
 set statusline+=%h%w%r%m    " flags
 set statusline+=%y          " filetype
+
+" show command that created quickfix window if relevant
+set statusline+=%{exists('w:quickfix_title')?'\ '.w:quickfix_title:''}
+
 set statusline+=%=          " switch to right side of screen
 set statusline+=%c,\        " cursor column
 set statusline+=%l\ /\ %L\  " cursor line / total lines
 set statusline+=\ \         " some space
 set statusline+=%P          " percent through file
 
-set showcmd                 " show commands as they're being typed
+set showcmd                   " show commands as they're being typed
+let g:qf_disable_statusline=1 " don't change statusline for quickfix window
 
 " =============================================================================
 " TAB COMPLETION
