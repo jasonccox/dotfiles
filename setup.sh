@@ -23,7 +23,7 @@ setup_vim() {
         echo Installing C language server \(you may be prompted for your password\)...
         yay -S --noconfirm ccls
     fi
-    vim +"CocInstall -sync coc-tsserver coc-html coc-css coc-yaml coc-sh" +"silent! helptags ALL" +"q"
+    vim +"silent! CocInstall -sync coc-tsserver coc-html coc-css coc-yaml coc-sh" +q +"silent! helptags ALL" +q
 }
 
 setup_git() {
