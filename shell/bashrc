@@ -98,9 +98,9 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
 [[ -f ~/dotfiles/vim/no-flow-control.bash ]] && \
     . ~/dotfiles/vim/no-flow-control.bash
 
-# enable tab completion for common commands
-[[ -f /usr/share/bash-completion/bash-completion ]] && \
-    . /usr/share/bash-completion/bash-completion
+# enable tab completion for common commands - requires bash-completion package
+[[ -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
 
 # suggest packages including a command that wasn't found
 [[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
