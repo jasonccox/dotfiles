@@ -16,8 +16,8 @@ set hidden              " if not set, TextEdit might fail
 " KEYMAPPINGS
 " =============================================================================
 
-" ctrl+space to trigger completion
-inoremap <silent><expr> <C-Space> coc#refresh()
+" ctrl+n to trigger completion
+inoremap <silent><expr> <C-n> coc#refresh()
 
 " enter confirms completion (<C-g>u breaks undo chain)
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
