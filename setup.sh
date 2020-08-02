@@ -9,7 +9,6 @@ link() {
 setup_shell() {
     echo Setting up shell...
     rm -f ~/.profile ~/.bash_profile ~/.bashrc
-    [ -f shell/profile ] && link shell/profile ~/.profile
     link shell/bash_profile ~/.bash_profile
     link shell/bashrc ~/.bashrc
 }
@@ -41,32 +40,6 @@ setup_tmux() {
     fi
 }
 
-setup_pim() {
-    echo Setting up PIM...
-    rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/config
-    mkdir -p ~/.config/khal ~/.config/todoman ~/.config/vdirsyncer
-    link pim/khal.conf ~/.config/khal/config
-    link pim/todoman.conf ~/.config/todoman/todoman.conf
-    link pim/vdirsyncer.conf ~/.config/vdirsyncer/config
-
-    echo Enter password for user jason for nextcloud.jlcox.com:
-    keyring set nextcloud.jlcox.com jason
-
-    mkdir -p ~/cal
-
-    vdirsyncer discover
-    vdirsyncer sync
-    vdirsyncer metasync
-
-    rm -f ~/.config/systemd/user/vdirsyncer-sync.{service,timer}
-    mkdir -p ~/.config/systemd/user
-    link pim/vdirsyncer-sync.service ~/.config/systemd/user/vdirsyncer-sync.service
-    link pim/vdirsyncer-sync.timer ~/.config/systemd/user/vdirsyncer-sync.timer
-
-    systemctl --user start vdirsyncer-sync.timer
-    systemctl --user enable vdirsyncer-sync.timer
-}
-
 setup_ssh() {
     echo Setting up SSH...
     mkdir -p ~/.ssh
@@ -89,39 +62,9 @@ setup_ssh() {
     fi
 }
 
-setup_karabiner() {
-    echo Settinp up Karabiner...
-    mkdir -p ~/.config/karabiner
-    rm -rf ~/.config/karabiner
-    link karabiner ~/.config/karabiner
-}
-
-setup_fonts() {
-    echo Setting up fonts...
-
-    if command -v yay &> /dev/null; then
-        echo You may be prompted for you password to install the fonts
-        yay -S --noconfirm nerd-fonts-hack
-    elif command -v brew &> /dev/null; then
-        brew cask install font-hack-nerd-font
-    else
-        echo Neither yay nor brew is available. You\'ll have to install the \
-            Hack Nerd fonts yourself.
-    fi
-
-    echo Be sure to set your terminal font to Hack Nerd Font Mono!
-}
-
-setup_pop() {
-    mkdir -p ~/.config/pop-shell
-
-    rm -f ~/.config/pop-shell/config.json
-    link pop-shell-config.json ~/.config/pop-shell/config.json
-}
-
 # check for help arg
 if [ "$1" = help ]; then
-    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner] [fonts]"
+    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [ssh]"
     echo "If no arguments are provided, everything will be setup."
     exit 0
 fi
@@ -144,9 +87,5 @@ else
     setup_vim
     setup_git
     setup_tmux
-    setup_pim
     setup_ssh
-    setup_karabiner
-    setup_fonts
-    setup_pop
 fi
