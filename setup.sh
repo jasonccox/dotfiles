@@ -18,12 +18,7 @@ setup_vim() {
     echo Setting up vim...
     rm -rf ~/.vim ~/.clang-format
     link vim ~/.vim
-    link clang-format ~/.clang-format
-    if command -v yay &> /dev/null; then
-        echo Installing C language server \(you may be prompted for your password\)...
-        yay -S --noconfirm ccls
-    fi
-    vim +"silent! CocInstall -sync coc-tsserver coc-html coc-css coc-yaml coc-sh" +q +"silent! helptags ALL" +q
+    vim +"silent! CocInstall -sync coc-sh" +q +"silent! helptags ALL" +q
 }
 
 setup_git() {
