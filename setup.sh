@@ -50,8 +50,8 @@ setup_pim() {
     link pim/todoman.conf ~/.config/todoman/todoman.conf
     link pim/vdirsyncer.conf ~/.config/vdirsyncer/config
 
-    echo Enter password for user jason for cloud.jasoncarloscox.com:
-    keyring set cloud.jasoncarloscox.com jason
+    echo Enter password for user jason for nextcloud.jlcox.com:
+    keyring set nextcloud.jlcox.com jason
 
     mkdir -p ~/cal
 
