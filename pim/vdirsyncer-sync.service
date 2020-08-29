@@ -1,0 +1,5 @@
+[Unit]
+Description=vdirsyncer sync
+
+[Service]
+ExecStart=vdirsyncer sync

@@ -54,9 +54,13 @@ setup_pim() {
     vdirsyncer sync
     vdirsyncer metasync
 
-    rm -f ~/.config/autostart-scripts/vdir_autosync
-    mkdir -p ~/.config/autostart-scripts/
-    link pim/vdir_autosync ~/.config/autostart-scripts/vdir_autosync
+    rm -f ~/.config/systemd/user/vdirsyncer-sync.{service,timer}
+    mkdir -p ~/.config/systemd/user
+    link pim/vdirsyncer-sync.service ~/.config/systemd/user/vdirsyncer-sync.service
+    link pim/vdirsyncer-sync.timer ~/.config/systemd/user/vdirsyncer-sync.timer
+
+    systemctl --user start vdirsyncer-sync.timer
+    systemctl --user enable vdirsyncer-sync.timer
 }
 
 setup_ssh() {
