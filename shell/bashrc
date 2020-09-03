@@ -49,6 +49,7 @@ fi
 alias ls='ls -h --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
+alias hw='todo list school'
 
 ################################################################################
 # SSH-AGENT
