@@ -9,14 +9,14 @@ link() {
 setup_shell() {
     echo Setting up shell...
     rm -f ~/.profile ~/.bash_profile ~/.bashrc
-    link shell/profile ~/.profile
+    [ -f shell/profile ] && link shell/profile ~/.profile
     link shell/bash_profile ~/.bash_profile
     link shell/bashrc ~/.bashrc
 }
 
 setup_vim() {
     echo Setting up vim...
-    rm -rf ~/.vim ~/.clang-format
+    rm -rf ~/.vim
     link vim ~/.vim
     vim +"silent! CocInstall -sync coc-sh" +q +"silent! helptags ALL" +q
 }

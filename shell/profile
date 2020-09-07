@@ -1,5 +1,0 @@
-#
-# ~/.profile
-#
-
-export GOPATH=$HOME/code/go
