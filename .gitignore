@@ -1,3 +1,4 @@
 vim/plugin/machine_specific.vim
 *.swp
 karabiner/automatic_backups
+vim/plugin/fzf.vim
