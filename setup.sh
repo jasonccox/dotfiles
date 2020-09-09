@@ -18,12 +18,7 @@ setup_vim() {
     echo Setting up vim...
     rm -rf ~/.vim ~/.clang-format
     link vim ~/.vim
-    link clang-format ~/.clang-format
-    if command -v yay &> /dev/null; then
-        echo Installing C language server \(you may be prompted for your password\)...
-        yay -S --noconfirm ccls
-    fi
-    vim +"silent! CocInstall -sync coc-tsserver coc-html coc-css coc-yaml coc-sh" +q +"silent! helptags ALL" +q
+    vim +"silent! CocInstall -sync coc-sh" +q +"silent! helptags ALL" +q
 }
 
 setup_git() {
@@ -50,8 +45,8 @@ setup_pim() {
     link pim/todoman.conf ~/.config/todoman/todoman.conf
     link pim/vdirsyncer.conf ~/.config/vdirsyncer/config
 
-    echo Enter password for user jason for cloud.jasoncarloscox.com:
-    keyring set cloud.jasoncarloscox.com jason
+    echo Enter password for user jason for nextcloud.jlcox.com:
+    keyring set nextcloud.jlcox.com jason
 
     mkdir -p ~/cal
 
@@ -59,9 +54,13 @@ setup_pim() {
     vdirsyncer sync
     vdirsyncer metasync
 
-    rm -f ~/.config/autostart-scripts/vdir_autosync
-    mkdir -p ~/.config/autostart-scripts/
-    link pim/vdir_autosync ~/.config/autostart-scripts/vdir_autosync
+    rm -f ~/.config/systemd/user/vdirsyncer-sync.{service,timer}
+    mkdir -p ~/.config/systemd/user
+    link pim/vdirsyncer-sync.service ~/.config/systemd/user/vdirsyncer-sync.service
+    link pim/vdirsyncer-sync.timer ~/.config/systemd/user/vdirsyncer-sync.timer
+
+    systemctl --user start vdirsyncer-sync.timer
+    systemctl --user enable vdirsyncer-sync.timer
 }
 
 setup_ssh() {

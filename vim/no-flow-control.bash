@@ -17,3 +17,6 @@ vim() {
     # restore stty options
     stty "$sttyopts"
 }
+
+# export the function so other scripts can use it
+export -f vim

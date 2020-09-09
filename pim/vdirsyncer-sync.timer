@@ -1,0 +1,9 @@
+[Unit]
+Description=Run vdirsyncer sync every 10 minutes
+
+[Timer]
+OnActiveSec=0
+OnUnitActiveSec=10min
+
+[Install]
+WantedBy=timers.target
