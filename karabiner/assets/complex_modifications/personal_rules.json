@@ -2,7 +2,36 @@
   "title": "Personal Rules",
   "rules": [
     {
-      "description": "Swap Left Cmd with Ctrl (except in Terminal/iTerm2, Vim)",
+      "description": "Left Ctrl as Cmd+Space if pressed alone",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to_if_alone": [
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Left Cmd as Ctrl (only in Terminal/iTerm2, Vim)",
       "manipulators": [
         {
           "type": "basic",
@@ -10,7 +39,8 @@
             "key_code": "left_command",
             "modifiers": {
               "optional": [
-                "any"
+                "option",
+                "shift"
               ]
             }
           },
@@ -22,34 +52,7 @@
           ],
           "conditions": [
             {
-              "type": "frontmost_application_unless",
-              "bundle_identifiers": [
-                "^com\\.apple\\.Terminal$",
-                "^com\\.googlecode\\.iterm2$",
-                "^org\\.vim\\.MacVim$"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "left_control",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_command",
-              "modifiers": []
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_unless",
+              "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "^com\\.apple\\.Terminal$",
                 "^com\\.googlecode\\.iterm2$",
