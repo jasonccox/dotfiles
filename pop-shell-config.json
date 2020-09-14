@@ -1,0 +1,11 @@
+{
+  "float": [
+    {
+      "class": "Gnome-calculator"
+    },
+    {
+      "class": "zoom"
+    }
+  ],
+  "log_on_focus": false
+}

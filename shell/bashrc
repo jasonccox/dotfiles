@@ -31,7 +31,7 @@ export PATH
 set -o vi                               # use vi mode
 export HISTSIZE=                        # unlimited history
 export HISTFILESIZE=                    # unlimited history file
-export HISTCONTROL=erasedups            # don't save duplicate history entries
+export HISTCONTROL=ignoreboth           # ignore duplicates, start w/space
 export HISTTIMEFORMAT='%Y %b %d %T  '   # save timestamp with history entries
 
 if shopt | grep -q '^histappend'; then
@@ -49,38 +49,18 @@ fi
 alias ls='ls -h --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
+alias todo='todoman'
 alias hw='todo list school'
-
-################################################################################
-# SSH-AGENT
-################################################################################
-
-# MacOS doesn't set XDG_RUNTIME_DIR - work around that
-if [ -z "$XDG_RUNTIME_DIR" ]; then
-    export XDG_RUNTIME_DIR="$HOME/.run"
-    if [ ! -d "$XDG_RUNTIME_DIR" ]; then
-        mkdir "$XDG_RUNTIME_DIR"
-        chmod 0700 "$XDG_RUNTIME_DIR"
-    fi
-fi
-
-# start if it isn't already running
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent -t 15m > "$XDG_RUNTIME_DIR/ssh-agent.env"
-fi
-
-# set env variables
-if [[ ! "$SSH_AUTH_SOCK" ]]; then
-    eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")" > /dev/null
-fi
 
 ################################################################################
 # FZF
 ################################################################################
 
 # source keybindings and completion scripts
-[[ -f /usr/share/fzf/key-bindings.bash ]] && . /usr/share/fzf/key-bindings.bash
-[[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
+[[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && \
+    . /usr/share/doc/fzf/examples/key-bindings.bash
+[[ -f /usr/share/doc/fzf/examples/completion.bash ]] && \
+    . /usr/share/doc/fzf/examples/completion.bash
 
 # use ripgrep by default
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
@@ -102,10 +82,6 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
 # enable tab completion for common commands - requires bash-completion package
 [[ -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
-
-# suggest packages including a command that wasn't found
-[[ -f /usr/share/doc/pkgfile/command-not-found.bash ]] && \
-    . /usr/share/doc/pkgfile/command-not-found.bash
 
 # source bashmarks
 [[ -f ~/dotfiles/shell/bashmarks.sh ]] && . ~/dotfiles/shell/bashmarks.sh

@@ -9,16 +9,20 @@ link() {
 setup_shell() {
     echo Setting up shell...
     rm -f ~/.profile ~/.bash_profile ~/.bashrc
-    link shell/profile ~/.profile
+    [ -f shell/profile ] && link shell/profile ~/.profile
     link shell/bash_profile ~/.bash_profile
     link shell/bashrc ~/.bashrc
 }
 
 setup_vim() {
     echo Setting up vim...
-    rm -rf ~/.vim ~/.clang-format
+    rm -rf ~/.vim
     link vim ~/.vim
     vim +"silent! CocInstall -sync coc-sh" +q +"silent! helptags ALL" +q
+
+    if [ -f /usr/share/doc/fzf/examples/fzf.vim ]; then
+        ln -s /usr/share/doc/fzf/examples/fzf.vim ~/.vim/plugin/fzf.vim
+    fi
 }
 
 setup_git() {
@@ -108,6 +112,13 @@ setup_fonts() {
     echo Be sure to set your terminal font to Hack Nerd Font Mono!
 }
 
+setup_pop() {
+    mkdir -p ~/.config/pop-shell
+
+    rm -f ~/.config/pop-shell/config.json
+    link pop-shell-config.json ~/.config/pop-shell/config.json
+}
+
 # check for help arg
 if [ "$1" = help ]; then
     echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner] [fonts]"
@@ -124,32 +135,8 @@ git submodule update
 if [ "$1" ]; then
     # setup each thing specified in args
     while [ "$1" ]; do
-        case "$1" in
-            shell )     setup_shell
-                        shift
-                        ;;
-            vim )       setup_vim
-                        shift
-                        ;;
-            git )       setup_git
-                        shift
-                        ;;
-            tmux )      setup_tmux
-                        shift
-                        ;;
-            pim )       setup_pim
-                        shift
-                        ;;
-            ssh )       setup_ssh
-                        shift
-                        ;;
-            karabiner ) setup_karabiner
-                        shift
-                        ;;
-            fonts )     setup_fonts
-                        shift
-                        ;;
-        esac
+        setup_"$1"
+        shift
     done
 else
     # setup everything
@@ -161,4 +148,5 @@ else
     setup_ssh
     setup_karabiner
     setup_fonts
+    setup_pop
 fi
