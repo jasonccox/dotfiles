@@ -52,6 +52,7 @@ set hlsearch                " highlight matches
 set path+=**                " recursively search sub-folbers when searching for files
 set ignorecase              " make searches case-insensitive
 set smartcase               " make searches case-sensitive if capitals used
+set shortmess-=S            " show current search match count in message line
 
 " =============================================================================
 " FOLDING
