@@ -4,17 +4,15 @@ set nocompatible            " don't worry about being compatible with Vi
 " COLORS
 " =============================================================================
 
-" enable true colors in tmux (https://github.com/tmux/tmux/issues/1246)
-if exists('+termguicolors')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-    set termguicolors
-endif
-
 syntax enable                   " enable syntax highlighting
 set cursorline                  " highlight current line
 set colorcolumn=81              " highlight column 81
-colorscheme jellybeans-custom   " my preferred colorscheme
+
+set background=dark                 " dark mode
+let g:gruvbox_sign_column = 'bg0'   " use normal bg color in sign column
+let g:gruvbox_italic = 1            " use italics, even in the terminal
+let g:gruvbox_termcolors = 16       " use the terminal pallete
+colorscheme gruvbox                 " my preferred colorscheme
 
 " set languages to be highlighted within markdown
 let g:markdown_fenced_languages = ['python', 'javascript']
