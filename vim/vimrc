@@ -157,7 +157,7 @@ nnoremap <Leader>8 :execute FindInFile()<CR>
 " =============================================================================
 
 set belloff=esc,insertmode  " no bell when pressing esc
-set signcolumn=number       " show signs in the number column
+set signcolumn=yes          " always show sign column
 
 filetype plugin indent on   " load specific plugins and indent files based on filetype
 packadd! matchit            " enable improved % matching
