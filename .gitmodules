@@ -37,3 +37,6 @@
 [submodule "vim/pack/util/start/vim-surround"]
 	path = vim/pack/util/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/theme/start/gruvbox"]
+	path = vim/pack/theme/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
