@@ -13,6 +13,25 @@ set updatetime=300      " improve diagnostic message experience
 set hidden              " if not set, TextEdit might fail
 
 " =============================================================================
+" EXTENSIONS
+" =============================================================================
+
+let g:coc_global_extensions = [
+    \ 'coc-css',
+    \ 'coc-docker',
+    \ 'coc-eslint',
+    \ 'coc-go',
+    \ 'coc-html',
+    \ 'coc-json',
+    \ 'coc-python',
+    \ 'coc-sh',
+    \ 'coc-snippets',
+    \ 'coc-tsserver',
+    \ 'coc-vimlsp',
+    \ 'coc-yaml',
+\ ]
+
+" =============================================================================
 " KEYMAPPINGS
 " =============================================================================
 

@@ -18,7 +18,6 @@ setup_vim() {
     echo Setting up vim...
     rm -rf ~/.vim
     link vim ~/.vim
-    vim +"silent! CocInstall -sync coc-sh" +q +"silent! helptags ALL" +q
 
     if [ -f /usr/share/doc/fzf/examples/fzf.vim ]; then
         ln -s /usr/share/doc/fzf/examples/fzf.vim ~/.vim/plugin/fzf.vim
