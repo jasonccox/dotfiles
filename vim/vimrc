@@ -1,8 +1,6 @@
 set nocompatible            " don't worry about being compatible with Vi
 
-" =============================================================================
-" COLORS
-" =============================================================================
+" COLORS {{{
 
 syntax enable                   " enable syntax highlighting
 set cursorline                  " highlight current line
@@ -17,54 +15,60 @@ colorscheme gruvbox                 " my preferred colorscheme
 " set languages to be highlighted within markdown
 let g:markdown_fenced_languages = ['python', 'javascript']
 
-" =============================================================================
-" SPACES & TABS
-" =============================================================================
+" }}}
+
+" INDENTATION {{{
 
 set tabstop=4               " number of visual spaces per tab
 set softtabstop=4           " number of spaces inserted when tab key is pressed
-set shiftwidth=4            " number of columns to indent
+set shiftwidth=4            " number of columns to indent with >>
+set shiftround              " indent to next multiple of shiftwidth with >>
 set expandtab               " insert spaces when tab key is pressed
 set autoindent              " turn on autoindent
 set smartindent             " be smarter about autoindenting
+
+" }}}
+
+" LIST CHARS {{{
+
 set list                    " show invisible characters, as described below
 set listchars=tab:→\ ,trail:⋅,precedes:«,extends:»
 
-" =============================================================================
-" LINES
-" =============================================================================
+" }}}
+
+" LINES {{{
 
 set number                  " show line numbers
 set cpoptions+=n            " let the text of wrapped lines use the gutter
 set scrolloff=5             " always show at least 5 lines below the cursor
 set wrap                    " wrap long lines
-set linebreak               " wrap lines at whitespace, not in the middle of words
+set linebreak               " wrap lines at whitespace, not mid-word
 set textwidth=0             " don't auto-break lines at any width
 
-" =============================================================================
-" SEARCH
-" =============================================================================
+" }}}
+
+" SEARCH {{{
 
 set incsearch               " search as characters are typed
 set hlsearch                " highlight matches
-set path+=**                " recursively search sub-folbers when searching for files
+set path+=**                " recursively search sub-folders when finding files
 set ignorecase              " make searches case-insensitive
 set smartcase               " make searches case-sensitive if capitals used
 set shortmess-=S            " show current search match count in message line
 
-" =============================================================================
-" FOLDING
-" =============================================================================
+" }}}
+
+" FOLDING {{{
 
 set foldenable              " enable folding
 set foldlevelstart=10       " auto-fold things starting at 10 levels deep
 set foldmethod=manual       " disable automatic fold generation - it's slow
-let g:markdown_folding=1    " make folding work for markdown - must be set before
+let g:markdown_folding=1    " make folding work for markdown - must set before
                             " built-in markdown ftplugin file is loaded
 
-" =============================================================================
-" STATUS LINE
-" =============================================================================
+" }}}
+
+" STATUS LINE {{{
 
 set laststatus=2            " always display the status line
 set statusline=%f\          " filename
@@ -83,9 +87,9 @@ set statusline+=%P          " percent through file
 set showcmd                   " show commands as they're being typed
 let g:qf_disable_statusline=1 " don't change statusline for quickfix window
 
-" =============================================================================
-" TAB COMPLETION
-" =============================================================================
+" }}}
+
+" TAB COMPLETION {{{
 
 set wildmenu                " show possible matches
 
@@ -96,25 +100,25 @@ set wildignore+=node_modules/*,bower_components/*
 set wildignore+=*.min.css,*.min.js
 set wildignore+=*.o,*.obj
 
-" =============================================================================
-" BACKSPACE
-" =============================================================================
+" }}}
+
+" BACKSPACE {{{
 
 set backspace=indent        " allow backspacing over autoindent
 set backspace+=eol          " allow backspacing over line breaks
 set backspace+=start        " allow backspacing over the start of insert
 
-" =============================================================================
-" NETRW
-" =============================================================================
+" }}}
+
+" NETRW {{{
 
 let g:netrw_banner = 0      " don't show banner
 let g:netrw_liststyle = 3   " use tree-style list
 let g:netrw_winsize = 25    " when opening in a split, only use 25% of space
 
-" =============================================================================
-" KEY MAPPINGS
-" =============================================================================
+" }}}
+
+" KEY MAPPINGS {{{
 
 let mapleader = " "         " set leader to space
 
@@ -150,14 +154,14 @@ fun! FindInFile()
 endfun
 nnoremap <Leader>8 :execute FindInFile()<CR>
 
-" =============================================================================
-" MISC
-" =============================================================================
+" }}}
+
+" MISC {{{
 
 set belloff=esc,insertmode  " no bell when pressing esc
 set signcolumn=yes          " always show sign column
 
-filetype plugin indent on   " load specific plugins and indent files based on filetype
+filetype plugin indent on   " load plugins, indent files based on filetype
 packadd! matchit            " enable improved % matching
 
 " restore cursor position when opening file
@@ -175,3 +179,5 @@ endif
 
 let g:AutoPairsCenterLine = 0 " don't move to center when pressing <CR> after {
 let g:AutoPairsMultilineClose = 0 " don't jump to closing bracket on next line
+
+" }}}
