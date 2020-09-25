@@ -85,8 +85,9 @@ omap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap af <Plug>(coc-funcobj-a)
 
-" use :Format to format current buffer
+" use :Format or <Leader>ff to format current buffer
 command! -nargs=0 Format :call CocAction('format')
+nnoremap <Leader>ff :Format<cr>
 
 " use :Fold to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)

@@ -165,6 +165,9 @@ fun! FindInFile()
 endfun
 nnoremap <Leader>8 :execute FindInFile()<CR>
 
+" easy formatting of the entire file without losing cursor position
+nnoremap <silent> <Leader>gq mFgggqG`F
+
 " }}}
 
 " MISC {{{

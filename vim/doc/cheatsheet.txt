@@ -69,6 +69,8 @@ Normal mode mappings:				 *cheatsheet-coc-normal*
 
 <Leader>fc	Quick-fix problem on current line
 
+<Leader>ff	Format entire file
+
 <Leader>gd	Go to symbol definition
 
 <Leader>gi	Go to implementation
@@ -162,6 +164,8 @@ Normal mode mappings:				*cheatsheet-misc-normal*
 <Leader>?	Open this help file
 
 <Leader>b	Show list of buffers with prepared buffer command
+
+<Leader>gq	Format entire file with formatprg
 
 <Leader>o	Open a file with FZF
 
