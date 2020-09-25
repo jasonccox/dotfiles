@@ -23,6 +23,7 @@ let g:coc_global_extensions = [
     \ 'coc-go',
     \ 'coc-html',
     \ 'coc-json',
+    \ 'coc-marketplace',
     \ 'coc-python',
     \ 'coc-sh',
     \ 'coc-snippets',
