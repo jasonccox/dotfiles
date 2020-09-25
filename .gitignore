@@ -2,3 +2,10 @@ vim/plugin/machine_specific.vim
 *.swp
 karabiner/automatic_backups
 vim/plugin/fzf.vim
+
+# keep vim file dirs, but not the files themselves
+vim/files/backup/*
+vim/files/swap/*
+vim/files/undo/*
+vim/files/viminfo
+!vim/files/**/.gitkeep

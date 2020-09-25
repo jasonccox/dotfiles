@@ -118,6 +118,17 @@ let g:netrw_winsize = 25    " when opening in a split, only use 25% of space
 
 " }}}
 
+" VIM FILES {{{
+
+set undofile    " persist undo history across buffer unloads
+
+set backupdir=~/.vim/files/backup//,.   " where to put backup files
+set directory=~/.vim/files/swap//,.     " where to put swap files
+set undodir=~/.vim/files/undo//,.       " where to put undo files
+set viminfofile=~/.vim/files/viminfo    " where to keep the viminfo file
+
+" }}}
+
 " KEY MAPPINGS {{{
 
 let mapleader = " "         " set leader to space
