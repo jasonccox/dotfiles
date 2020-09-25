@@ -5,9 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-################################################################################
-# PATH
-################################################################################
+# PATH {{{
 
 # add ~/.local/bin
 if [ -d "$HOME/.local/bin" ]; then
@@ -21,9 +19,9 @@ fi
 
 export PATH
 
-################################################################################
-# BASH SETTINGS
-################################################################################
+# }}}
+
+# BASH SETTINGS {{{
 
 # use a fancy prompt if possible
 [ -f ~/dotfiles/shell/prompt.bash ] && . ~/dotfiles/shell/prompt.bash
@@ -42,9 +40,9 @@ if shopt | grep -q '^checkjobs'; then
     shopt -s checkjobs                  # warn if jobs running/stopped on exit
 fi
 
-################################################################################
-# ALIASES
-################################################################################
+# }}}
+
+# ALIASES {{{
 
 alias ls='ls -h --color=auto'
 alias cp='cp -i'
@@ -52,9 +50,9 @@ alias mv='mv -i'
 alias todo='todoman'
 alias hw='todo list school'
 
-################################################################################
-# FZF
-################################################################################
+# }}}
+
+# FZF {{{
 
 # source keybindings and completion scripts
 [[ -f /usr/share/doc/fzf/examples/key-bindings.bash ]] && \
@@ -68,9 +66,9 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
 # use ctrl-f as alternate to normal fzf ctrl-t since I use ctrl-t for tmux
 bind -x '"\C-f": fzf-file-widget'
 
-################################################################################
-# MISC
-################################################################################
+# }}}
+
+# MISC {{{
 
 export EDITOR=vim   # use vim as preferred editor
 export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
@@ -95,3 +93,6 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
    tmux attach -t default || tmux new -s default
 fi
 
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0
