@@ -26,11 +26,11 @@ export PATH
 # use a fancy prompt if possible
 [ -f ~/dotfiles/shell/prompt.bash ] && . ~/dotfiles/shell/prompt.bash
 
-set -o vi                               # use vi mode
-export HISTSIZE=                        # unlimited history
-export HISTFILESIZE=                    # unlimited history file
-export HISTCONTROL=ignoreboth           # ignore duplicates, start w/space
-export HISTTIMEFORMAT='%Y %b %d %T  '   # save timestamp with history entries
+set -o vi                                # use vi mode
+export HISTSIZE=                         # unlimited history
+export HISTFILESIZE=                     # unlimited history file
+export HISTCONTROL=erasedups:ignorespace # no dups or entries starting w/space
+export HISTTIMEFORMAT='%Y %b %d %T  '    # save timestamp with history entries
 
 if shopt | grep -q '^histappend'; then
     shopt -s histappend                 # append to history when writing it
