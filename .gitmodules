@@ -40,3 +40,9 @@
 [submodule "vim/pack/theme/start/gruvbox"]
 	path = vim/pack/theme/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "vim/pack/util/start/asyncrun.vim"]
+	path = vim/pack/util/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "vim/pack/util/start/vim-pandoc-markdown-preview"]
+	path = vim/pack/util/start/vim-pandoc-markdown-preview
+	url = https://github.com/conornewton/vim-pandoc-markdown-preview.git
