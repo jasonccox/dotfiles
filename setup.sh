@@ -95,22 +95,6 @@ setup_karabiner() {
     link karabiner ~/.config/karabiner
 }
 
-setup_fonts() {
-    echo Setting up fonts...
-
-    if command -v yay &> /dev/null; then
-        echo You may be prompted for you password to install the fonts
-        yay -S --noconfirm nerd-fonts-hack
-    elif command -v brew &> /dev/null; then
-        brew cask install font-hack-nerd-font
-    else
-        echo Neither yay nor brew is available. You\'ll have to install the \
-            Hack Nerd fonts yourself.
-    fi
-
-    echo Be sure to set your terminal font to Hack Nerd Font Mono!
-}
-
 setup_pop() {
     mkdir -p ~/.config/pop-shell
 
@@ -120,7 +104,7 @@ setup_pop() {
 
 # check for help arg
 if [ "$1" = help ]; then
-    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner] [fonts]"
+    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner]"
     echo "If no arguments are provided, everything will be setup."
     exit 0
 fi
@@ -146,6 +130,5 @@ else
     setup_pim
     setup_ssh
     setup_karabiner
-    setup_fonts
     setup_pop
 fi

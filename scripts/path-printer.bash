@@ -4,7 +4,7 @@
 # Author: Jason Cox (dev@jasoncarloscox.com)
 
 EXEC_NAME="$0"
-SHORTENER=…
+SHORTENER=...
 MAX_LENGTH=30
 
 usage() {

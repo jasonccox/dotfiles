@@ -5,14 +5,17 @@
 
 EXEC_NAME="$0"
 
-PREFIX='שׂ '
-AHEAD_FLAG=''
-BEHIND_FLAG=''
-MODIFIED_FLAG=''
-STAGED_FLAG=''
-STASHED_FLAG=''
-UNTRACKED_FLAG=''
-CLEAN_FLAG=''
+PREFIX=''
+AHEAD_FLAG='a'
+BEHIND_FLAG='b'
+MODIFIED_FLAG='m'
+STAGED_FLAG='s'
+STASHED_FLAG='t'
+UNTRACKED_FLAG='u'
+CLEAN_FLAG='c'
+CLEAN_COLOR=''
+DIRTY_COLOR=''
+DEFAULT_COLOR=''
 
 usage() {
     echo \
@@ -49,6 +52,18 @@ OPTIONS
 -c | --clean FLAG
     Print FLAG when the local git branch is clean (nothing modified, staged, or
     untracked). DEFAULT '$CLEAN_FLAG'.
+
+--clean-color COLOR
+    The color to use for the flags when the local git branch is clean (nothing
+    modified, staged, or untracked). DEFAULT '$CLEAN_COLOR'.
+
+--default-color COLOR
+    The color to reset to after applying the clean or dirty color. DEFAULT
+    '$DEFAULT_COLOR'.
+
+--dirty-color COLOR
+    The color to use for the flags when the local git branch is dirty (something
+    modified, staged, or untracked). DEFAULT '$DIRTY_COLOR'.
 
 -h | --help
     Print this help message.
@@ -104,10 +119,12 @@ flags() {
         fi
     fi
 
-    if [ -n "$CLEAN_FLAG" ] && [ -z "$clean" ]; then
+    if [ -z "$clean" ]; then
         clean="$CLEAN_FLAG"
+        color="$CLEAN_COLOR"
     else
         clean=""
+        color="$DIRTY_COLOR"
     fi
 
     if [ -n "$AHEAD_FLAG" ] || [ -n "$BEHIND_FLAG" ]; then
@@ -133,7 +150,14 @@ flags() {
         local stashed="$STASHED_FLAG"
     fi
 
-    echo -n " $ahead$behind$clean$staged$modified$untracked$stashed"
+    f="$ahead$behind$clean$staged$modified$untracked$stashed"
+    with_color="$color$f$DEFAULT_COLOR"
+
+    if [ -n "$f" ]; then
+        with_color=":$with_color"
+    fi
+
+    echo -n "$with_color"
 }
 
 # parse options
@@ -152,6 +176,21 @@ while [ -n "$1" ]; do
         -c|--clean)
             shift
             CLEAN_FLAG="$1"
+            ;;
+
+        --clean-color)
+            shift
+            CLEAN_COLOR="$1"
+            ;;
+
+        --default-color)
+            shift
+            DEFAULT_COLOR="$1"
+            ;;
+
+        --dirty-color)
+            shift
+            DIRTY_COLOR="$1"
             ;;
 
         -h|--help)
