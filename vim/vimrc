@@ -32,7 +32,7 @@ set smartindent             " be smarter about autoindenting
 " LIST CHARS {{{
 
 set list                    " show invisible characters, as described below
-set listchars=tab:→\ ,trail:⋅,precedes:«,extends:»
+set listchars=tab:>\ ,trail:.,precedes:<,extends:>
 
 " }}}
 
