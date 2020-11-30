@@ -5,6 +5,9 @@
     },
     {
       "class": "zoom"
+    },
+    {
+      "class": "Bitwarden"
     }
   ],
   "log_on_focus": false
