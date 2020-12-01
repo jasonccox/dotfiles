@@ -1,24 +1,12 @@
-[submodule "vim/pack/lang/start/coc.nvim"]
-	path = vim/pack/lang/start/coc.nvim
-	url = https://github.com/neoclide/coc.nvim.git
 [submodule "vim/pack/tpope/start/vim-commentary"]
 	path = vim/pack/util/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
 [submodule "vim/pack/util/start/vim-ripgrep"]
 	path = vim/pack/util/start/vim-ripgrep
 	url = https://github.com/jremmen/vim-ripgrep.git
-[submodule "vim/pack/lang/start/vim-javascript"]
-	path = vim/pack/lang/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule "vim/pack/util/start/auto-pairs"]
 	path = vim/pack/util/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule "vim/pack/lang/start/typescript-vim"]
-	path = vim/pack/lang/start/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "vim/pack/lang/start/vim-jsx-typescript"]
-	path = vim/pack/lang/start/vim-jsx-typescript
-	url = https://github.com/peitalin/vim-jsx-typescript.git
 [submodule "vim/pack/util/start/vim-tmux-navigator"]
 	path = vim/pack/util/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
@@ -28,9 +16,6 @@
 [submodule "vim/pack/util/start/vim-gitgutter"]
 	path = vim/pack/util/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/pack/util/start/vim-snippets"]
-	path = vim/pack/util/start/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/pack/util/start/vim-tmux-focus-events"]
 	path = vim/pack/util/start/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
@@ -40,9 +25,3 @@
 [submodule "vim/pack/theme/start/gruvbox"]
 	path = vim/pack/theme/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-[submodule "vim/pack/util/start/asyncrun.vim"]
-	path = vim/pack/util/start/asyncrun.vim
-	url = https://github.com/skywind3000/asyncrun.vim.git
-[submodule "vim/pack/util/start/vim-pandoc-markdown-preview"]
-	path = vim/pack/util/start/vim-pandoc-markdown-preview
-	url = https://github.com/conornewton/vim-pandoc-markdown-preview.git
