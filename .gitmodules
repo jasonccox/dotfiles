@@ -46,3 +46,6 @@
 [submodule "vim/pack/util/start/vim-pandoc-markdown-preview"]
 	path = vim/pack/util/start/vim-pandoc-markdown-preview
 	url = https://github.com/conornewton/vim-pandoc-markdown-preview.git
+[submodule "vim/pack/util/start/vim-grammarous"]
+	path = vim/pack/util/start/vim-grammarous
+	url = https://github.com/rhysd/vim-grammarous.git
