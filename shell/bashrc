@@ -61,7 +61,7 @@ alias hw='todo list school'
     . /usr/share/doc/fzf/examples/completion.bash
 
 # use ripgrep by default
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 # use ctrl-f as alternate to normal fzf ctrl-t since I use ctrl-t for tmux
 bind -x '"\C-f": fzf-file-widget'
