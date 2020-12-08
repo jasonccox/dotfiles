@@ -129,19 +129,22 @@ flags() {
 
     if [ -n "$AHEAD_FLAG" ] || [ -n "$BEHIND_FLAG" ]; then
         local ab_line="$(grep -E '^# branch\.ab' <<< "$status")"
-        local ab="${ab_line#*+}" # everything after the plus sign
 
-        if [ -n "$AHEAD_FLAG" ]; then
-            local a="${ab%\ -*}"
-            if [ "$a" -gt 0 ]; then
-                ahead="$AHEAD_FLAG"
+        if [ -n "$ab_line" ]; then
+            local ab="${ab_line#*+}" # everything after the plus sign
+
+            if [ -n "$AHEAD_FLAG" ]; then
+                local a="${ab%\ -*}"
+                if [ "$a" -gt 0 ]; then
+                    ahead="$AHEAD_FLAG"
+                fi
             fi
-        fi
 
-        if [ -n "$BEHIND_FLAG" ]; then
-            local b="${ab#*-}"
-            if [ "$b" -gt 0 ]; then
-                behind="$BEHIND_FLAG"
+            if [ -n "$BEHIND_FLAG" ]; then
+                local b="${ab#*-}"
+                if [ "$b" -gt 0 ]; then
+                    behind="$BEHIND_FLAG"
+                fi
             fi
         fi
     fi
