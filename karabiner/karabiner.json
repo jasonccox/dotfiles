@@ -16,36 +16,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Left Ctrl as Cmd+Space if pressed alone",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_control",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "spacebar",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Left Cmd as Ctrl (only in Terminal/iTerm2, Vim)",
+                        "description": "Ctrl shortcuts to Cmd shortcuts (Colemak, not in terminal)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -55,30 +26,472 @@
                                             "^com\\.googlecode\\.iterm2$",
                                             "^org\\.vim\\.MacVim$"
                                         ],
-                                        "type": "frontmost_application_if"
+                                        "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "a",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "c",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "e",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "h",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "j",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": ";",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": ";",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "r",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "s",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "d",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ],
+                                        "optional": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "f",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "i",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "v",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "w",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "x",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "o",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_control"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "z",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Left Cmd for Spotlight & Mission Control",
+                        "manipulators": [
+                            {
                                 "from": {
                                     "key_code": "left_command",
                                     "modifiers": {
                                         "optional": [
-                                            "option",
-                                            "shift"
+                                            "any"
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "left_control",
-                                        "modifiers": []
-                                    }
-                                ],
+                                "parameters": {
+                                    "basic.to_if_alone_timeout_milliseconds": 200,
+                                    "basic.to_if_held_down_threshold_milliseconds": 200
+                                },
+                                "to": {
+                                    "key_code": "left_command"
+                                },
+                                "to_if_alone": {
+                                    "key_code": "spacebar",
+                                    "modifiers": [
+                                        "left_command"
+                                    ]
+                                },
+                                "to_if_held_down": {
+                                    "key_code": "spacebar",
+                                    "modifiers": [
+                                        "left_control"
+                                    ]
+                                },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Ctrl-Shift-V as Cmd-V (only in Terminal/iTerm2, Vim)",
+                        "description": "Ctrl-Shift-V as Cmd-V (only in terminal)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -92,31 +505,26 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": 25,
+                                    "key_code": "v",
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control",
                                             "left_shift"
-                                        ],
-                                        "optional": [
-                                            "any"
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": 25,
-                                        "modifiers": [
-                                            "command"
-                                        ]
-                                    }
-                                ],
+                                "to": {
+                                    "key_code": "v",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Option+Tab to Command+Tab",
+                        "description": "Option+Tab to Command+Tab (and backtick)",
                         "manipulators": [
                             {
                                 "from": {
@@ -130,39 +538,14 @@
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": "command"
-                                    }
-                                ],
+                                "to": {
+                                    "key_code": "tab",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
                                 "type": "basic"
                             },
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "tab",
-                                        "modifiers": "command"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Option+Backtick to Command+Backtick",
-                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "grave_accent_and_tilde",
@@ -175,32 +558,12 @@
                                         ]
                                     }
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": "command"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
+                                "to": {
                                     "key_code": "grave_accent_and_tilde",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_option"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "modifiers": [
+                                        "command"
+                                    ]
                                 },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": "command"
-                                    }
-                                ],
                                 "type": "basic"
                             }
                         ]
@@ -233,49 +596,10 @@
                                 "key_code": "left_option"
                             },
                             "to": {
-                                "key_code": "left_control"
+                                "key_code": "left_command"
                             }
                         }
                     ]
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 219,
-                        "vendor_id": 1118
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": false,
-                        "is_pointing_device": true,
-                        "product_id": 41072,
-                        "vendor_id": 1241
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": false,
-                        "product_id": 41072,
-                        "vendor_id": 1241
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -348,7 +672,7 @@
                         "key_code": "f9"
                     },
                     "to": {
-                        "consumer_key_code": "fastforward"
+                        "consumer_key_code": "fast_forward"
                     }
                 },
                 {
@@ -388,22 +712,6 @@
                     },
                     "to": {
                         "key_code": "escape"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "left_command"
-                    },
-                    "to": {
-                        "key_code": "left_control"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "left_control"
-                    },
-                    "to": {
-                        "key_code": "left_command"
                     }
                 }
             ],
