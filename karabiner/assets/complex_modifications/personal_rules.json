@@ -395,7 +395,7 @@
             "modifiers": [ "left_command" ]
           },
           "to_if_held_down": {
-            "key_code": "spacebar",
+            "key_code": "up_arrow",
             "modifiers": [ "left_control" ]
           },
           "to": {
