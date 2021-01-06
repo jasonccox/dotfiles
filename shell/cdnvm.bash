@@ -17,7 +17,10 @@ find-up () {
     while [[ "$path" != "" && "$path" != "$HOME" && ! -e "$path/$1" ]]; do
         path=${path%/*}
     done
-    echo "$path"
+
+    if [[ -f "$path/$1" ]]; then
+        echo "$path"
+    fi
 }
 
 # run cd with arguments and switch node version (using nvm) as applicable
