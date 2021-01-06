@@ -82,12 +82,7 @@ OPTIONS
 
 -u | --untracked FLAG
     Print FLAG when there are untracked files in the git repository. Default
-    '$UNTRACKED_FLAG'
-
-NOTES
-
-The default symbols look best with a monospaced nerd font. (See
-https://www.nerdfonts.com/)"
+    '$UNTRACKED_FLAG'"
 }
 
 flags() {
