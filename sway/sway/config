@@ -12,9 +12,6 @@ set $right l
 # Use Alacritty as the default terminal.
 set $term alacritty
 
-# Use wofi to launch applications.
-set $menu wofi --show drun,run
-
 # Set preferred monospace font.
 set $font_mono Fira Mono 10
 
@@ -100,8 +97,11 @@ input * {
     # Kill focused window.
     bindsym $mod+Shift+q kill
 
-    # Start the launcher.
-    bindsym $mod+d exec $menu
+    # Start the launcher (desktop files).
+    bindsym $mod+space exec wofi --show drun
+
+    # Start the launcher (commands).
+    bindsym $mod+Shift+space exec wofi --show run
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -185,10 +185,10 @@ input * {
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode.
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+g floating toggle
 
     # Swap focus between the tiling area and the floating area.
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+g focus mode_toggle
 
     # Move focus to the parent container.
     bindsym $mod+a focus parent
