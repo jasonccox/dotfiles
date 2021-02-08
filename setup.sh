@@ -102,6 +102,14 @@ setup_pop() {
     link pop-shell-config.json ~/.config/pop-shell/config.json
 }
 
+setup_sway() {
+    mkdir -p ~/.config
+
+    rm -rf ~/.config/sway{,lock}
+    link sway/sway ~/.config/sway
+    link sway/swaylock ~/.config/swaylock
+}
+
 # check for help arg
 if [ "$1" = help ]; then
     echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner]"
@@ -131,4 +139,5 @@ else
     setup_ssh
     setup_karabiner
     setup_pop
+    setup_sway
 fi
