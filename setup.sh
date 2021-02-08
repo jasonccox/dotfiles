@@ -110,6 +110,13 @@ setup_sway() {
     link sway/swaylock ~/.config/swaylock
 }
 
+setup_alacritty() {
+    mkdir -p ~/.config
+
+    rm -rf ~/.config/alacritty
+    link alacritty ~/.config/alacritty
+}
+
 # check for help arg
 if [ "$1" = help ]; then
     echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner]"
@@ -140,4 +147,5 @@ else
     setup_karabiner
     setup_pop
     setup_sway
+    setup_alacritty
 fi
