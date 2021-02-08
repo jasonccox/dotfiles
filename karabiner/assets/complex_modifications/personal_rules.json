@@ -99,6 +99,29 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "u",
+            "modifiers": {
+              "mandatory": [ "left_control" ]
+            }
+          },
+          "to": {
+            "key_code": "u",
+            "modifiers": [ "command" ]
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_unless",
+              "bundle_identifiers": [
+                "^com\\.apple\\.Terminal$",
+                "^com\\.googlecode\\.iterm2$",
+                "^org\\.vim\\.MacVim$"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "j",
             "modifiers": {
               "mandatory": [ "left_control" ]
