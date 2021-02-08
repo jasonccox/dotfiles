@@ -6,3 +6,6 @@ gtk_dark=true
 
 # show generic names next to application names for .desktop files
 drun-display_generic=true
+
+# parse everything after a space as arguments, not part of the executable name
+run-always_parse_args=true
