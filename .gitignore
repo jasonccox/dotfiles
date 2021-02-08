@@ -9,3 +9,6 @@ vim/files/swap/*
 vim/files/undo/*
 vim/files/viminfo
 !vim/files/**/.gitkeep
+
+# dumb macOS files
+.DS_Store
