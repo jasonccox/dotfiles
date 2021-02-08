@@ -49,3 +49,6 @@
 [submodule "vim/pack/util/start/vim-grammarous"]
 	path = vim/pack/util/start/vim-grammarous
 	url = https://github.com/rhysd/vim-grammarous.git
+[submodule "vim/pack/util/start/vim-fugitive"]
+	path = vim/pack/util/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
