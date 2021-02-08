@@ -1,0 +1,8 @@
+# allow case insensitive search
+insensitive=true
+
+# prefer the dark variant of the current GTK theme
+gtk_dark=true
+
+# show generic names next to application names for .desktop files
+drun-display_generic=true

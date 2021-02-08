@@ -12,10 +12,8 @@ set $right l
 # Use Alacritty as the default terminal.
 set $term alacritty
 
-# Use dmenu to launch applications.
-# (Pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.)
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# Use wofi to launch applications.
+set $menu wofi --show drun,run
 
 # Set preferred monospace font.
 set $font_mono Fira Mono 10
