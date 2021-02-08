@@ -1,0 +1,6 @@
+# Alacritty configuration for hudson, my ThinkPad (Linux).
+#
+# This only gets included if it's symlinked to alacritty/machine-specific.yml.
+
+font:
+  size: 10.0
