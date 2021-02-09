@@ -271,7 +271,7 @@ bar {
         focused_workspace #3465af #3465af #eeeeec
 
         # workspace that is visible but not on the focused display
-        active_workspace #88807c #88807c #d3d7cf
+        active_workspace #75507b #75507b #d3d7cf
 
         # workspace that is not visible
         inactive_workspace #88807c #88807c #d3d7cf
