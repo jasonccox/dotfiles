@@ -52,3 +52,6 @@
 [submodule "vim/pack/util/start/vim-fugitive"]
 	path = vim/pack/util/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/pack/util/start/vim-wayland-clipboard"]
+	path = vim/pack/util/start/vim-wayland-clipboard
+	url = git@github.com:jasonccox/vim-wayland-clipboard.git
