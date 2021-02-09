@@ -274,5 +274,9 @@ bar {
     }
 }
 
+### AUTOSTART PROGRAMS
+
+exec mako
+
 # Include additional config files.
 include ~/dotfiles/sway/sway/config.d/*

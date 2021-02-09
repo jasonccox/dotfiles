@@ -107,9 +107,11 @@ setup_sway() {
 
     rm -rf ~/.config/sway{,lock}
     rm -rf ~/.config/wofi
+    rm -rf ~/.config/mako
     link sway/sway ~/.config/sway
     link sway/swaylock ~/.config/swaylock
     link sway/wofi ~/.config/wofi
+    link sway/mako ~/.config/mako
 }
 
 setup_alacritty() {
