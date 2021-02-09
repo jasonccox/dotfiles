@@ -40,7 +40,6 @@ set listchars=tab:>\ ,trail:.,precedes:<,extends:>
 " LINES {{{
 
 set number                  " show line numbers
-set cpoptions+=n            " let the text of wrapped lines use the gutter
 set scrolloff=5             " always show at least 5 lines below the cursor
 set wrap                    " wrap long lines
 set linebreak               " wrap lines at whitespace, not mid-word

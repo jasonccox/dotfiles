@@ -119,6 +119,17 @@ setup_alacritty() {
 
     rm -rf ~/.config/alacritty
     link alacritty ~/.config/alacritty
+
+    # link the appropriate machine-specific config based on hostname
+    rm alacritty/machine-specific.yml
+    case "$(hostname)" in
+        hudson) # ThinkPad
+            link alacritty/machine-specific/hudson.yml alacritty/machine-specific.yml
+            ;;
+        Q-*) # Qualtrics laptop
+            link alacritty/machine-specific/Q.yml alacritty/machine-specific.yml
+            ;;
+    esac
 }
 
 # check for help arg

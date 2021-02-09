@@ -9,3 +9,10 @@ vim/files/swap/*
 vim/files/undo/*
 vim/files/viminfo
 !vim/files/**/.gitkeep
+
+# dumb macOS files
+.DS_Store
+
+# this file is symlinked to something in `alacritty/machine-specific` based
+# on the current device's hostname
+alacritty/machine-specific.yml
