@@ -30,6 +30,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "a",
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
@@ -58,6 +59,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "c",
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": {
@@ -86,6 +88,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "f",
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
@@ -114,6 +117,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "h",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -132,6 +136,7 @@
                             },
                             {
                                 "type": "basic",
+                                "description": "l",
                                 "from": {
                                     "key_code": "u",
                                     "modifiers": {
@@ -170,6 +175,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "n",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -198,6 +204,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "o",
                                 "from": {
                                     "key_code": ";",
                                     "modifiers": {
@@ -226,6 +233,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "p",
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
@@ -254,6 +262,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "r",
                                 "from": {
                                     "key_code": "s",
                                     "modifiers": {
@@ -285,6 +294,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "s",
                                 "from": {
                                     "key_code": "d",
                                     "modifiers": {
@@ -313,6 +323,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "t",
                                 "from": {
                                     "key_code": "f",
                                     "modifiers": {
@@ -344,6 +355,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "u",
                                 "from": {
                                     "key_code": "i",
                                     "modifiers": {
@@ -372,6 +384,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "v",
                                 "from": {
                                     "key_code": "v",
                                     "modifiers": {
@@ -400,6 +413,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "w",
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
@@ -428,6 +442,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "x",
                                 "from": {
                                     "key_code": "x",
                                     "modifiers": {
@@ -456,6 +471,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "y",
                                 "from": {
                                     "key_code": "o",
                                     "modifiers": {
@@ -484,6 +500,7 @@
                                         "type": "frontmost_application_unless"
                                     }
                                 ],
+                                "description": "z",
                                 "from": {
                                     "key_code": "z",
                                     "modifiers": {
