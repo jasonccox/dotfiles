@@ -939,6 +939,41 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Shortcuts to launch apps",
+                        "manipulators": [
+                            {
+                                "description": "cmd+t for terminal",
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "open --new /Applications/Alacritty.app"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "cmd+b for browser",
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "open --new /Applications/Firefox.app"
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
