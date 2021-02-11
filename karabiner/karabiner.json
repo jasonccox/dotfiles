@@ -622,6 +622,323 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Second layer",
+                        "manipulators": [
+                            {
+                                "description": "k as up",
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "up_arrow"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "j as down",
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "down_arrow"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "h as left",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "left_arrow"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "l as right",
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "right_arrow"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "n as backspace",
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "delete_or_backspace"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "q as ~",
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "grave_accent_and_tilde",
+                                    "modifiers": "shift"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "w as `",
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "grave_accent_and_tilde"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "f as |",
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "backslash",
+                                    "modifiers": "shift"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "p as \\",
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "backslash"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "a as {",
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": "shift"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "r as }",
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": "shift"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "s as [",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "open_bracket"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "t as ]",
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "close_bracket"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "z as +",
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "equal_sign",
+                                    "modifiers": "shift"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "x as =",
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "equal_sign"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "c as _",
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "hyphen",
+                                    "modifiers": "shift"
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "v as -",
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "hyphen"
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
