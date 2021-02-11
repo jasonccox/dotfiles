@@ -3,4 +3,11 @@
 # This only gets included if it's symlinked to alacritty/machine-specific.yml.
 
 font:
-  size: 11.5
+  size: 12.5
+
+window:
+  startup_mode: Maximized
+
+key_bindings:
+  # make ctrl-6 work to switch to alternate buffer in Vim
+  - { key: Key6, mods: Control, chars: "\x1e" }
