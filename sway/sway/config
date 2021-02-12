@@ -105,10 +105,10 @@ input * {
     bindsym $mod+Shift+q kill
 
     # Start the launcher (desktop files).
-    bindsym $mod+space exec wofi --show drun
+    bindsym $mod+space exec wofi --show drun --prompt "Launch app"
 
     # Start the launcher (commands).
-    bindsym $mod+Shift+space exec wofi --show run
+    bindsym $mod+Shift+space exec wofi --show run --prompt "Run command"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -262,6 +262,11 @@ input * {
     bindsym Shift+Print exec $grimshot --notify save area
     bindsym Ctrl+Shift+Print exec $grimshot --notify copy area
 
+# Notifications
+
+    bindsym $mod+m exec makoctl dismiss
+    bindsym $mod+Shift+m exec \
+        makoctl menu wofi --dmenu --prompt "Act on notification"
 
 ### STATUS BAR
 
