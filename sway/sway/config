@@ -96,7 +96,10 @@ input * {
 # Basics
 
     # Start a terminal.
-    bindsym $mod+Return exec $term
+    bindsym $mod+t exec $term
+
+    # Start a browser.
+    bindsym $mod+b exec env MOZ_ENABLE_WAYLAND=1 firefox
 
     # Kill focused window.
     bindsym $mod+Shift+q kill
@@ -177,7 +180,7 @@ input * {
 
     # "Split" the current object of focus with $mod+b or $mod+v, for horizontal
     # and vertical splits, respectively.
-    bindsym $mod+b splith
+    bindsym $mod+x splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles.
