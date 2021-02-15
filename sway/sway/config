@@ -70,13 +70,11 @@ exec_always ~/dotfiles/sway/sway/clamshell_mode.sh $laptop
 
 ### IDLE CONFIGURATION
 
-# Lock the screen after 300 seconds of inactivity, then turn it off after
-# another 60 seconds, and turn it back on when resumed. Also lock the screen
-# before the computer goes to sleep.
+# Lock the screen after 300 seconds of inactivity, then turn suspend after
+# another 60 seconds. Also lock the screen. before the computer goes to sleep.
 exec swayidle -w \
          timeout 300 swaylock \
-         timeout 360 'swaymsg "output * dpms off"' \
-         resume 'swaymsg "output * dpms on"' \
+         timeout 360 'systemctl suspend' \
          before-sleep swaylock
 
 # Don't enter idle while in a Zoom meeting.
