@@ -104,7 +104,6 @@ setup_pop() {
 
 setup_sway() {
     mkdir -p ~/.config
-    mkdir -p ~/.local/bin
 
     rm -rf ~/.config/sway{,lock}
     rm -rf ~/.config/wofi
