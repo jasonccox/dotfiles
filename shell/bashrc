@@ -86,6 +86,11 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc" # set ripgrep config file
 # source an extra file that isn't tracked by dotfiles repo for local-only configs
 [[ -f ~/.bash_extra ]] && . ~/.bash_extra
 
+# start sway on login
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+    command -v sway &> /dev/null && exec sway
+fi
+
 # start tmux by default - needs to be last for settings set here to apply to
 # tmux server
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

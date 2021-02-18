@@ -4,7 +4,7 @@ background-color=#222222
 text-color=#d3d7cf
 progress-color=over #4e9a06
 
-default-timeout=5000
+default-timeout=10000
 
 [urgency=low]
 border-color=#4e9a06
