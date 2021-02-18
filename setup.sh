@@ -106,10 +106,8 @@ setup_sway() {
     mkdir -p ~/.config
 
     rm -rf ~/.config/sway{,lock}
-    rm -rf ~/.config/wofi
     link sway/sway ~/.config/sway
     link sway/swaylock ~/.config/swaylock
-    link sway/wofi ~/.config/wofi
 }
 
 setup_alacritty() {
