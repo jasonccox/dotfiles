@@ -7,13 +7,15 @@
 # - pulsemixer
 
 printBatteryStatus() {
-    # parse percent from battery status info
+    # get battery status info
     local status="$(acpi -b)"
+
+    # parse percent
     local percent="${status#*, }"
     percent="${percent%, *}"
 
     # determine if the battery is charging
-    local charging="$(acpi -a | grep -q 'on-line' && echo -n '+')"
+    local charging="$(echo $status | grep -q ': Charging' && echo -n '+')"
 
     # print the results
     echo -n "B $percent$charging"
