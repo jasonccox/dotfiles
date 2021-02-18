@@ -49,17 +49,13 @@ smart_gaps on
 # Set the wallpaper.
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-# Arrange displays side by side - use `swaymsg -t get_outputs` to get names. I
-# have multiple entries under each because my ThinkPad dock seems to change the
-# output names sometimes.
+# Arrange displays side by side - use `swaymsg -t get_outputs` to get names.
 
     # left display
     output DP-4 pos 0 0 res 1920x1080
-    output DP-6 pos 0 0 res 1920x1080
 
     # right display
     output DP-5 pos 1920 0 res 1920x1080
-    output DP-7 pos 1920 0 res 1920x1080
 
 # Disable the laptop display when the lid is closed. See
 # https://github.com/swaywm/sway/wiki#clamshell-mode.
