@@ -47,7 +47,6 @@ fi
 alias ls='ls -h --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
-alias todo='todoman'
 alias hw='todo list school'
 
 # }}}

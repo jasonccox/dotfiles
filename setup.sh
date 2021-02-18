@@ -64,6 +64,8 @@ setup_pim() {
 
     systemctl --user start vdirsyncer-sync.timer
     systemctl --user enable vdirsyncer-sync.timer
+
+    echo You may want to follow the instructions at 'https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method' to enable auto-unlocking the keyring on login
 }
 
 setup_ssh() {
