@@ -3,12 +3,11 @@
 # Link real configs to the ones in dotfiles
 
 link() {
-    ln -s "$(pwd)/$1" "$2"
+    ln -sf "$(pwd)/$1" "$2"
 }
 
 setup_shell() {
     echo Setting up shell...
-    rm -f ~/.profile ~/.bash_profile ~/.bashrc
     [ -f shell/profile ] && link shell/profile ~/.profile
     link shell/bash_profile ~/.bash_profile
     link shell/bashrc ~/.bashrc
@@ -16,7 +15,6 @@ setup_shell() {
 
 setup_vim() {
     echo Setting up vim...
-    rm -rf ~/.vim
     link vim ~/.vim
 
     if [ -f /usr/share/doc/fzf/examples/fzf.vim ]; then
@@ -26,13 +24,11 @@ setup_vim() {
 
 setup_git() {
     echo Setting up git...
-    rm -f ~/.gitconfig
     link git/gitconfig ~/.gitconfig
 }
 
 setup_tmux() {
     echo Setting up tmux...
-    rm -f ~/.tmux.conf
     link tmux/tmux.conf ~/.tmux.conf
 
     if ! infocmp tmux-256color &> /dev/null; then
@@ -42,7 +38,6 @@ setup_tmux() {
 
 setup_pim() {
     echo Setting up PIM...
-    rm -f ~/.config/khal/config ~/.config/todoman/todoman.conf ~/.config/vdirsyncer/config
     mkdir -p ~/.config/khal ~/.config/todoman ~/.config/vdirsyncer
     link pim/khal.conf ~/.config/khal/config
     link pim/todoman.conf ~/.config/todoman/todoman.conf
@@ -57,7 +52,6 @@ setup_pim() {
     vdirsyncer sync
     vdirsyncer metasync
 
-    rm -f ~/.config/systemd/user/vdirsyncer-sync.{service,timer}
     mkdir -p ~/.config/systemd/user
     link pim/vdirsyncer-sync.service ~/.config/systemd/user/vdirsyncer-sync.service
     link pim/vdirsyncer-sync.timer ~/.config/systemd/user/vdirsyncer-sync.timer
@@ -69,7 +63,6 @@ setup_pim() {
 setup_ssh() {
     echo Setting up SSH...
     mkdir -p ~/.ssh
-    rm -f ~/.ssh/config
     link ssh/config ~/.ssh/config
 
     link_authorized_keys=yes
@@ -83,7 +76,6 @@ setup_ssh() {
     fi
 
     if [ "$link_authorized_keys" = yes ]; then
-        rm -f ~/.ssh/authorized_keys
         link ssh/authorized_keys ~/.ssh/authorized_keys
     fi
 }
@@ -91,14 +83,12 @@ setup_ssh() {
 setup_karabiner() {
     echo Settinp up Karabiner...
     mkdir -p ~/.config/karabiner
-    rm -rf ~/.config/karabiner
     link karabiner ~/.config/karabiner
 }
 
 setup_pop() {
     mkdir -p ~/.config/pop-shell
 
-    rm -f ~/.config/pop-shell/config.json
     link pop-shell-config.json ~/.config/pop-shell/config.json
 }
 
