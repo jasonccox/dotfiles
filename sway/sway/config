@@ -293,7 +293,6 @@ bar {
 ### AUTOSTART PROGRAMS
 
 exec mako
-exec ~/dotfiles/sway/sway/battery_monitor.sh
 
 # Include additional config files.
 include ~/dotfiles/sway/sway/config.d/*
