@@ -99,9 +99,6 @@ input * {
     # Start a browser.
     bindsym $mod+b exec env MOZ_ENABLE_WAYLAND=1 firefox
 
-    # Start a calculator
-    bindsym $mod+c exec gnome-calculator
-
     # Kill focused window.
     bindsym $mod+Shift+q kill
 
@@ -183,10 +180,10 @@ input * {
 
 # Layout stuff:
 
-    # "Split" the current object of focus with $mod+v or $mod+x, for horizontal
+    # "Split" the current object of focus with $mod+b or $mod+v, for horizontal
     # and vertical splits, respectively.
-    bindsym $mod+v splith
-    bindsym $mod+x splitv
+    bindsym $mod+x splith
+    bindsym $mod+v splitv
 
     # Switch the current container between different layout styles.
     bindsym $mod+s layout stacking
@@ -304,9 +301,6 @@ bar {
 
 # Start Bitwarden in the scratchpad but visible.
 for_window [class="Bitwarden" window_type="normal"] move scratchpad; scratchpad show
-
-# Always float gnome-calculator by default.
-for_window [app_id="gnome-calculator"] floating enable
 
 ### AUTOSTART PROGRAMS
 
