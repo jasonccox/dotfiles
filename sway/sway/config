@@ -308,7 +308,6 @@ for_window [class="Bitwarden" window_type="normal"] move scratchpad; scratchpad 
 
 exec mako
 exec ~/dotfiles/sway/sway/battery_monitor.sh
-exec nextcloud --background
 
 # Include additional config files.
 include ~/dotfiles/sway/sway/config.d/*
