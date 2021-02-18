@@ -299,11 +299,6 @@ bar {
     }
 }
 
-### WINDOW RULES
-
-# Start Bitwarden in the scratchpad but visible.
-for_window [class="Bitwarden" window_type="normal"] move scratchpad; scratchpad show
-
 ### AUTOSTART PROGRAMS
 
 exec mako
