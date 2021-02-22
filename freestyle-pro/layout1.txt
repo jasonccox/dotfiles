@@ -1,0 +1,39 @@
+[caps]>[esc]
+fn [w]>[tilde]
+fn [r]>[\]
+fn [d]>[obrk]
+fn [f]>[cbrk]
+fn [x]>[=]
+fn [v]>[hyph]
+fn [kp*]>[hyph]
+fn [y]>[dwn]
+fn [kp4]>[rght]
+fn [kp5]>[i]
+fn [kp6]>[o]
+fn [kp-]>[p]
+fn [h]>[lft]
+fn [kp2]>[k]
+fn [kp3]>[l]
+fn [kp+]>[colon]
+fn [n]>[up]
+fn [kp0]>[m]
+fn [kp.]>[per]
+fn [kp/]>[/]
+[rspc]>[fnshf]
+fn [rspc]>[fnshf]
+fn {q}>{x1}{-lshft}{tilde}{+lshft}
+fn {e}>{x1}{-lshft}{\}{+lshft}
+fn {a}>{x1}{-lshft}{obrk}{+lshft}
+fn {s}>{x1}{-lshft}{cbrk}{+lshft}
+fn {z}>{x1}{-lshft}{=}{+lshft}
+fn {c}>{x1}{-lshft}{hyph}{+lshft}
+
+
+[hyph]>[null]
+[=]>[null]
+[cbrk]>[null]
+[\]>[null]
+[tilde]>[null]
+[bspc]>[null]
+
+[obrk]>[bspc]
