@@ -92,9 +92,25 @@ setup_pop() {
     link pop-shell-config.json ~/.config/pop-shell/config.json
 }
 
+setup_kmonad() {
+    echo Setting up KMonad. Root privileges will be required.
+
+    if ! command -v kmonad &> /dev/null; then
+        echo KMonad is not installed. Please install and try again.
+        return 1
+    fi
+
+    sudo mkdir -p /etc/kmonad
+
+    sudo link kmonad/config.kbd /etc/kmonad/config.kbd
+    sudo link kmonad/kmonad.service /etc/systemd/system/kmonad.service
+    sudo systemctl enable kmonad.service
+    sudo systemctl start kmonad.service
+}
+
 # check for help arg
 if [ "$1" = help ]; then
-    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner]"
+    echo "USAGE: ./setup.sh [shell] [vim] [git] [tmux] [pim] [ssh] [karabiner] [pop] [kmonad]"
     echo "If no arguments are provided, everything will be setup."
     exit 0
 fi
@@ -121,4 +137,5 @@ else
     setup_ssh
     setup_karabiner
     setup_pop
+    setup_kmonad
 fi

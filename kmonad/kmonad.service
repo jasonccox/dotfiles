@@ -1,0 +1,14 @@
+# KMonad service adapted from 
+# https://github.com/david-janssen/kmonad/blob/master/startup/kmonad.service
+
+[Unit]
+Description=KMonad keyboard config
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=kmonad /etc/kmonad/config.kbd
+Nice=-20
+
+[Install]
+WantedBy=default.target
