@@ -559,20 +559,6 @@
         },
         {
           "type": "basic",
-          "description": "n as backspace",
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": [ "right_option" ],
-              "optional": [ "any" ]
-            }
-          },
-          "to": {
-            "key_code": "delete_or_backspace"
-          }
-        },
-        {
-          "type": "basic",
           "description": "q as ~",
           "from": {
             "key_code": "q",
