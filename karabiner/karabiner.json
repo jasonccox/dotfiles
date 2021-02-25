@@ -131,6 +131,16 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.apple\\.Terminal$",
+                                            "^com\\.googlecode\\.iterm2$",
+                                            "^org\\.vim\\.MacVim$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "description": "l",
                                 "from": {
                                     "key_code": "u",
@@ -146,17 +156,7 @@
                                         "command"
                                     ]
                                 },
-                                "type": "basic",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_unless",
-                                        "bundle_identifiers": [
-                                            "^com\\.apple\\.Terminal$",
-                                            "^com\\.googlecode\\.iterm2$",
-                                            "^org\\.vim\\.MacVim$"
-                                        ]
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
                                 "conditions": [
