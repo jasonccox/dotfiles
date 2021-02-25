@@ -36,7 +36,7 @@
 ;; the second layer
 (deflayer layer2
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    `    ~    |    \\   _    down rght _    _    _    _    _    _
+  _    ~    `    |    \\   _    down rght _    _    _    _    _    _
   _    {    }    [    ]    _    left _    _    _    _    _    _
   _    +    =    \_   -    _    up   _    _    _    _    _
   _    _    _                 _                _    _
