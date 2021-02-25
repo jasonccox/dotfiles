@@ -22,8 +22,7 @@
   lctl lmet lalt            spc                ralt rctl
 )
 
-;; @sl2 = space when pressed alone for fewer than 1 second, layer 2 otherwise
-(defalias sl2 (tap-hold-next-release 1000 spc (layer-toggle layer2)))
+(defalias l2 (layer-toggle layer2))
 
 ;; the base (default) layer
 (deflayer qwerty
@@ -31,7 +30,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    bspc XX   XX
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt            @sl2               ralt rctl
+  lctl lmet lalt            spc                @l2  rctl
 )
 
 ;; the second layer
